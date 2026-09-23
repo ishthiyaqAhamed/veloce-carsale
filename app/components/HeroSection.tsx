@@ -1,43 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
-import { ArrowRight, Volume2, VolumeX, Play, Pause, ShieldCheck, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import TestDriveModal from "./TestDriveModal";
 
 export default function HeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 1.0;
-      videoRef.current.play().catch(() => {
-        // Auto-play might require user gesture if unmuted
-        setIsPlaying(false);
-      });
-    }
-  }, []);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
 
   return (
     <>
@@ -47,13 +17,12 @@ export default function HeroSection() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           
           <video
-            ref={videoRef}
             autoPlay
             loop
-            muted={isMuted}
+            muted
             playsInline
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+            className="absolute inset-0 w-full h-full object-cover object-center scale-105"
           >
             <source src="/hero-car.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -141,7 +110,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* ================= BOTTOM BAR CONTROLS & LIVE STATS ================= */}
+        {/* ================= BOTTOM STATS BAR ================= */}
         <div className="relative z-20 max-w-7xl mx-auto w-full pt-6 border-t border-[#1E1E3F]/80 flex flex-wrap items-center justify-between gap-4">
           
           {/* Stats Bar */}
@@ -162,25 +131,9 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Video Playback Controls */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={togglePlay}
-              className="p-2.5 rounded-lg bg-[#0E0E1F]/80 border border-[#1E1E3F] text-white hover:text-[#C9FF00] hover:border-[#C9FF00] transition-colors backdrop-blur-md cursor-pointer"
-              title={isPlaying ? "Pause Video" : "Play Video"}
-              aria-label="Toggle video playback"
-            >
-              {isPlaying ? <Pause size={14} /> : <Play size={14} />}
-            </button>
-
-            <button
-              onClick={toggleMute}
-              className="p-2.5 rounded-lg bg-[#0E0E1F]/80 border border-[#1E1E3F] text-white hover:text-[#C9FF00] hover:border-[#C9FF00] transition-colors backdrop-blur-md cursor-pointer"
-              title={isMuted ? "Unmute Video Audio" : "Mute Video Audio"}
-              aria-label="Toggle audio"
-            >
-              {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} className="text-[#C9FF00]" />}
-            </button>
+          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+            <ShieldCheck size={14} className="text-[#C9FF00]" />
+            <span>Verified Luxury Dealership</span>
           </div>
 
         </div>
