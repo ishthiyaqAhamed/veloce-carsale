@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --lime:    #C9FF00;
+  --pink:    #FF1F6E;
+  --cyan:    #00E5FF;
+  --void:    #06060E;
+  --surface: #0E0E1F;
+  --card:    #141428;
+  --border:  #1E1E3F;
+  --muted:   #6B6B8E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-void:    #06060E;
+  --color-surface: #0E0E1F;
+  --color-card:    #141428;
+  --color-border:  #1E1E3F;
+  --color-muted:   #6B6B8E;
+  --color-lime:    #C9FF00;
+  --color-pink:    #FF1F6E;
+  --color-cyan:    #00E5FF;
+
+  --font-display: var(--font-barlow), sans-serif;
+  --font-body:    var(--font-dm), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--void);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  selection-background-color: var(--lime);
+  selection-color: var(--void);
+}
+
+::selection {
+  background-color: #C9FF00;
+  color: #06060E;
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06060E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E1E3F;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9FF00;
+}
+
+/* Carbon weave micro-pattern overlay */
+.carbon-pattern {
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%);
+  background-size: 8px 8px;
+}
+
+/* Glassmorphism Luxury Panels */
+.luxury-glass {
+  background: rgba(14, 14, 31, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 30, 63, 0.7);
+}
+
+.luxury-glass-void {
+  background: rgba(6, 6, 14, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(30, 30, 63, 0.8);
+}
+
+/* Hairline Laser Borders */
+.laser-border-lime {
+  position: relative;
+}
+.laser-border-lime::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(201, 255, 0, 0.6), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.laser-border-cyan {
+  position: relative;
+}
+.laser-border-cyan::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.6), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Aerodynamic velocity stream animations */
+@keyframes windStream {
+  0% {
+    transform: translateX(120%) scaleX(0.2);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-120%) scaleX(1.4);
+    opacity: 0;
+  }
+}
+
+.animate-wind-stream {
+  animation: windStream 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes tachometerSweep {
+  0% { transform: rotate(-120deg); }
+  50% { transform: rotate(40deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(-120deg); }
+}
+
+.animate-tachometer {
+  animation: tachometerSweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: bottom center;
 }
