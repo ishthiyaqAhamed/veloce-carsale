@@ -32,13 +32,6 @@ export default function CustomerReviewsSection() {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-100">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono font-bold uppercase mb-3">
-              <span className="flex items-center text-amber-500">
-                <Star size={13} fill="currentColor" />
-              </span>
-              <span>Google Verified Reviews</span>
-            </div>
-            
             <h2 className="font-display font-black text-3xl sm:text-4xl uppercase text-slate-900 tracking-tight">
               Rate & Review on Google
             </h2>

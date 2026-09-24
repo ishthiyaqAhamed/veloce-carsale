@@ -41,15 +41,8 @@ export default function TradeInValuation() {
           <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-sky-100/70 rounded-full blur-3xl pointer-events-none" />
 
           {/* Header Section */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 relative z-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 relative z-10">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime-50 border border-lime-200 mb-4 shadow-xs">
-                <RefreshCw size={14} className="text-lime-600 animate-spin" style={{ animationDuration: "12s" }} />
-                <span className="text-xs font-mono uppercase tracking-wider text-slate-900 font-bold">
-                  Official Trade-In & Equity Exchange Program
-                </span>
-              </div>
-
               <h2 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase text-slate-900 tracking-tight leading-[0.92]">
                 Trade In Your Vehicle <br />
                 <span className="text-lime-600">Get Top Market Value</span>
@@ -80,11 +73,7 @@ export default function TradeInValuation() {
 
               {/* Vector Car & Exchange Artwork */}
               <div className="relative z-10">
-                <div className="flex items-center justify-between gap-4 mb-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#C9FF00] text-xs font-mono uppercase font-bold">
-                    <TrendingUp size={14} />
-                    <span>Live Market Appraisal Algorithm</span>
-                  </div>
+                <div className="flex items-center justify-between gap-4 mb-4">
                   <span className="text-[11px] font-mono text-slate-400">Step 1 of 2</span>
                 </div>
 

@@ -25,12 +25,6 @@ export default function ContactPage() {
       {/* Header */}
       <div className="bg-white py-16 px-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
-            <span className="w-2 h-2 rounded-full bg-lime-500" />
-            <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
-              Get in Touch
-            </span>
-          </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-2">
             Contact Our Team
           </h1>

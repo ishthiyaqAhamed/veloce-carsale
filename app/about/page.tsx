@@ -17,12 +17,6 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-8">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
-                <span className="w-2 h-2 rounded-full bg-lime-500" />
-                <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
-                  About Hansagiri Auto Traders
-                </span>
-              </div>
               <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-4">
                 Beruwala&apos;s Trusted Auto Dealership
               </h1>
@@ -82,10 +76,6 @@ export default function AboutPage() {
             </div>
 
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-mono font-bold uppercase mb-2">
-                <span className="w-2 h-2 rounded-full bg-[#C9FF00]" />
-                <span>Showroom & Vehicle Yard</span>
-              </div>
               <h3 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-white drop-shadow-md">
                 Beruwala Showroom Fleet
               </h3>
@@ -109,10 +99,9 @@ export default function AboutPage() {
             </div>
 
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 backdrop-blur-md border border-amber-300/40 text-xs font-mono font-bold text-amber-300 uppercase mb-2">
-                <span className="w-2 h-2 rounded-full bg-amber-400" />
-                <span>Grand Opening Showcase</span>
-              </div>
+              <h3 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-white drop-shadow-md">
+                Grand Opening Showcase
+              </h3>
               <p className="text-xs text-slate-300 font-mono mt-1">
                 State-of-the-art facility featuring luxury and performance vehicles
               </p>
@@ -173,13 +162,6 @@ export default function AboutPage() {
             
             {/* Location Info (5 cols) */}
             <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-50 border border-lime-200 mb-3">
-                <MapPin size={13} className="text-lime-600" />
-                <span className="text-xs font-mono uppercase tracking-widest text-slate-800 font-bold">
-                  Visit Our Showroom
-                </span>
-              </div>
-
               <h2 className="font-display font-black text-3xl sm:text-4xl uppercase text-slate-900 mb-4 tracking-tight">
                 Showroom Location & Directions
               </h2>

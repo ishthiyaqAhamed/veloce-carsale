@@ -39,12 +39,6 @@ export default function FeaturedVehicles({
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-2">
-            <span className="w-2 h-2 rounded-full bg-lime-500" />
-            <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
-              {showBodyTypeFilter ? "Showroom Fleet" : "Showroom Highlights"}
-            </span>
-          </div>
           <h2 className="font-display font-black text-4xl sm:text-5xl uppercase text-slate-900 tracking-tight">
             {showBodyTypeFilter ? "Browse by Body Type" : "Featured Vehicles"}
           </h2>

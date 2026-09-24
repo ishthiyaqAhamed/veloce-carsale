@@ -42,19 +42,7 @@ export default function HeroSection() {
         {/* ================= FOREGROUND HERO CONTENT ================= */}
         
         {/* Top Tag */}
-        <div className="relative z-20 max-w-7xl mx-auto w-full">
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6 shadow-sm"
-          >
-            <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#C9FF00]">
-              <span>★ 5.0</span>
-              <span className="text-white/80 font-normal">(2 Google Reviews)</span>
-            </span>
-          </motion.div>
-        </div>
+
 
         {/* Center Main Headline & CTAs */}
         <div className="relative z-20 max-w-7xl mx-auto w-full my-auto py-6">
