@@ -62,14 +62,14 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
             <div className="grid grid-cols-3 gap-2 py-3 border-y border-slate-100 text-xs font-mono mb-5 bg-slate-50/70 rounded-lg px-3">
               <div>
                 <span className="text-[10px] text-slate-500 block uppercase">Mileage</span>
-                <span className="text-slate-900 font-bold">{vehicle.mileage.toLocaleString()} mi</span>
+                <span className="text-slate-900 font-bold">{vehicle.mileage.toLocaleString()} km</span>
               </div>
               <div>
                 <span className="text-[10px] text-slate-500 block uppercase">Power</span>
                 <span className="text-slate-900 font-bold">{vehicle.horsepower} HP</span>
               </div>
               <div>
-                <span className="text-[10px] text-slate-500 block uppercase">0-60</span>
+                <span className="text-[10px] text-slate-500 block uppercase">0-100</span>
                 <span className="text-slate-900 font-bold">{vehicle.acceleration}</span>
               </div>
             </div>
@@ -81,9 +81,9 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
         <div className="p-6 pt-0">
           <div className="flex items-center justify-between pt-4 border-t border-slate-100">
             <div>
-              <p className="text-[10px] text-slate-500 uppercase font-mono font-semibold">Asking Price</p>
-              <p className="font-display font-black text-2xl text-slate-950">
-                ${vehicle.price.toLocaleString()}
+              <p className="text-[10px] text-slate-500 uppercase font-mono font-semibold">Price</p>
+              <p className="font-display font-black text-xl text-slate-950">
+                LKR {vehicle.price.toLocaleString()}
               </p>
             </div>
 

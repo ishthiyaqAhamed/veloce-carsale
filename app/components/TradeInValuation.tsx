@@ -130,11 +130,11 @@ export default function TradeInValuation() {
                   {/* Dynamic Floating Trade Badges */}
                   <g>
                     {/* Badge 1: Trade Valuation */}
-                    <rect x="350" y="20" width="190" height="52" rx="14" fill="#0F172A" stroke="#C9FF00" strokeWidth="2" />
-                    <circle cx="375" cy="46" r="12" fill="#C9FF00" />
-                    <text x="371" y="50" fill="#0F172A" fontSize="12" fontWeight="bold" fontFamily="monospace">$</text>
-                    <text x="395" y="40" fill="#94A3B8" fontSize="10" fontFamily="monospace">INSTANT VALUATION</text>
-                    <text x="395" y="58" fill="#FFFFFF" fontSize="15" fontWeight="bold" fontFamily="sans-serif">+ $3,500 Over KBB</text>
+                    <rect x="330" y="20" width="220" height="52" rx="14" fill="#0F172A" stroke="#C9FF00" strokeWidth="2" />
+                    <circle cx="355" cy="46" r="14" fill="#C9FF00" />
+                    <text x="347" y="50" fill="#0F172A" fontSize="10" fontWeight="bold" fontFamily="monospace">Rs</text>
+                    <text x="380" y="39" fill="#94A3B8" fontSize="10" fontFamily="monospace">INSTANT VALUATION</text>
+                    <text x="380" y="58" fill="#FFFFFF" fontSize="14" fontWeight="bold" fontFamily="sans-serif">+ LKR 500,000 Boost</text>
 
                     {/* Circular Trade Arrows */}
                     <circle cx="280" cy="46" r="22" fill="#1E293B" stroke="#38BDF8" strokeWidth="2" />
