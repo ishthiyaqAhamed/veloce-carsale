@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Coins, Globe } from "lucide-react";
 import TestDriveModal from "./TestDriveModal";
@@ -31,17 +32,27 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative h-11 w-28 sm:h-12 sm:w-32 bg-slate-950 rounded-xl p-1 flex items-center justify-center border border-slate-800 shadow-xs overflow-hidden transition-transform group-hover:scale-102">
+              <Image
+                src="/hansagiri-logo.png"
+                alt="Hansagiri Auto Traders Logo"
+                width={160}
+                height={60}
+                className="w-full h-full object-contain"
+                priority
+              />
+            </div>
             <div className="flex flex-col">
-              <span className="font-display text-2xl sm:text-3xl font-black tracking-wider text-slate-900 leading-none">
+              <span className="font-display text-lg sm:text-xl font-black tracking-wider text-slate-900 leading-none">
                 HANSAGIRI<span className="text-lime-600">.</span>
               </span>
-              <span className="text-[10px] font-mono tracking-widest uppercase text-slate-500 font-bold -mt-0.5">
-                Auto Traders · Beruwala
+              <span className="text-[9px] font-mono tracking-widest uppercase text-slate-500 font-bold mt-0.5">
+                Auto Trading
               </span>
             </div>
           </Link>

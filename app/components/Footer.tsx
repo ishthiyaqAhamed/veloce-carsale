@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Star, ExternalLink, Clock } from "lucide-react";
 
 export default function Footer() {
@@ -10,8 +11,16 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="font-display text-3xl font-black tracking-widest text-slate-900 block mb-2">
-              HANSAGIRI<span className="text-lime-600">.</span>
+            <Link href="/" className="inline-block mb-4">
+              <div className="relative h-16 w-48 bg-slate-950 rounded-2xl p-2 flex items-center justify-center border border-slate-800 shadow-sm overflow-hidden">
+                <Image
+                  src="/hansagiri-logo.png"
+                  alt="Hansagiri Auto Traders Logo"
+                  width={180}
+                  height={60}
+                  className="object-contain max-h-full w-auto"
+                />
+              </div>
             </Link>
             <p className="text-xs font-mono uppercase tracking-wider text-slate-500 font-bold mb-4">
               Hansagiri Auto Traders · Car Dealer in Beruwala

@@ -14,21 +14,38 @@ export default function AboutPage() {
       {/* Header */}
       <div className="bg-white py-16 px-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
-            <span className="w-2 h-2 rounded-full bg-lime-500" />
-            <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
-              About Hansagiri Auto Traders
-            </span>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-8">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
+                <span className="w-2 h-2 rounded-full bg-lime-500" />
+                <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
+                  About Hansagiri Auto Traders
+                </span>
+              </div>
+              <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-4">
+                Beruwala&apos;s Trusted Auto Dealership
+              </h1>
+              <p className="text-lg text-slate-700 max-w-3xl leading-relaxed font-normal">
+                &ldquo;Hansagiri Auto Traders is a premier auto dealership specializing in high-quality new and pre-owned vehicles. We are dedicated to providing the best vehicle deals, honest pricing, and highly dependable customer service. Whether you are looking to buy a brand-new car or a budget-friendly used vehicle in excellent condition, our expert team is here to put you in the right ride. We guarantee transparency in every transaction. Visit our showroom today and drive with confidence every time.&rdquo;
+              </p>
+            </div>
+
+            <div className="shrink-0">
+              <div className="relative h-28 w-60 sm:h-36 sm:w-72 bg-slate-950 rounded-2xl p-4 flex items-center justify-center border border-slate-800 shadow-xl overflow-hidden">
+                <Image
+                  src="/hansagiri-logo.png"
+                  alt="Hansagiri Auto Traders Official Gold Logo"
+                  width={260}
+                  height={100}
+                  className="object-contain max-h-full w-auto"
+                  priority
+                />
+              </div>
+            </div>
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-4">
-            Beruwala&apos;s Trusted Auto Dealership
-          </h1>
-          <p className="text-lg text-slate-700 max-w-3xl leading-relaxed font-normal">
-            &ldquo;Hansagiri Auto Traders is a premier auto dealership specializing in high-quality new and pre-owned vehicles. We are dedicated to providing the best vehicle deals, honest pricing, and highly dependable customer service. Whether you are looking to buy a brand-new car or a budget-friendly used vehicle in excellent condition, our expert team is here to put you in the right ride. We guarantee transparency in every transaction. Visit our showroom today and drive with confidence every time.&rdquo;
-          </p>
 
           {/* Quick Business Highlights */}
-          <div className="mt-8 flex flex-wrap items-center gap-6 text-xs font-mono text-slate-600">
+          <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-600 pt-6 border-t border-slate-100">
             <div className="flex items-center gap-2 bg-amber-50 text-amber-900 px-3 py-1.5 rounded-full border border-amber-200 font-bold">
               <Star size={14} className="text-amber-500" fill="currentColor" />
               <span>5.0 Rating (2 Google Reviews)</span>
