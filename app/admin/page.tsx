@@ -647,31 +647,31 @@ export default function AdminPortal() {
       {/* Admin Body (Sidebar + Content) */}
       <div className="flex-1 flex flex-col md:flex-row">
         
-        {/* Sidebar */}
-        <aside className="w-full md:w-64 bg-[#0F172A] border-r border-slate-800 p-4 shrink-0">
-          <nav className="space-y-1.5">
+        {/* Sidebar / Mobile Tab Bar */}
+        <aside className="w-full md:w-64 bg-[#0F172A] border-b md:border-b-0 md:border-r border-slate-800 p-3 md:p-4 shrink-0">
+          <nav className="flex md:flex-col overflow-x-auto md:overflow-visible gap-1.5 md:gap-0 md:space-y-1.5 scrollbar-none pb-1 md:pb-0">
             <button
               onClick={() => setActiveTab("dashboard")}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex items-center gap-2.5 px-3.5 md:px-4 py-2.5 md:py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shrink-0 md:shrink md:w-full ${
                 activeTab === "dashboard"
                   ? "bg-lime-500 text-slate-950 shadow-md"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
-              <LayoutDashboard size={16} />
+              <LayoutDashboard size={15} />
               <span>Dashboard</span>
             </button>
 
             <button
               onClick={() => setActiveTab("inventory")}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex items-center justify-between gap-2.5 px-3.5 md:px-4 py-2.5 md:py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shrink-0 md:shrink md:w-full ${
                 activeTab === "inventory"
                   ? "bg-lime-500 text-slate-950 shadow-md"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
-              <div className="flex items-center gap-3">
-                <Car size={16} />
+              <div className="flex items-center gap-2.5">
+                <Car size={15} />
                 <span>Inventory Fleet</span>
               </div>
               <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${activeTab === "inventory" ? "bg-slate-950 text-white" : "bg-slate-800 text-slate-300"}`}>
@@ -681,14 +681,14 @@ export default function AdminPortal() {
 
             <button
               onClick={() => setActiveTab("inquiries")}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex items-center justify-between gap-2.5 px-3.5 md:px-4 py-2.5 md:py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shrink-0 md:shrink md:w-full ${
                 activeTab === "inquiries"
                   ? "bg-lime-500 text-slate-950 shadow-md"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
-              <div className="flex items-center gap-3">
-                <Calendar size={16} />
+              <div className="flex items-center gap-2.5">
+                <Calendar size={15} />
                 <span>Test Drives / VIP</span>
               </div>
               {pendingInquiriesCount > 0 && (
@@ -700,15 +700,15 @@ export default function AdminPortal() {
 
             <button
               onClick={() => setActiveTab("tradeins")}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex items-center justify-between gap-2.5 px-3.5 md:px-4 py-2.5 md:py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shrink-0 md:shrink md:w-full ${
                 activeTab === "tradeins"
                   ? "bg-lime-500 text-slate-950 shadow-md"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
-              <div className="flex items-center gap-3">
-                <RefreshCw size={16} />
-                <span>Trade-In Valuations</span>
+              <div className="flex items-center gap-2.5">
+                <RefreshCw size={15} />
+                <span>Trade-Ins</span>
               </div>
               <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${activeTab === "tradeins" ? "bg-slate-950 text-white" : "bg-slate-800 text-slate-300"}`}>
                 {tradeInsList.length}
@@ -717,14 +717,14 @@ export default function AdminPortal() {
 
             <button
               onClick={() => setActiveTab("gallery")}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex items-center justify-between gap-2.5 px-3.5 md:px-4 py-2.5 md:py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shrink-0 md:shrink md:w-full ${
                 activeTab === "gallery"
                   ? "bg-lime-500 text-slate-950 shadow-md"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
-              <div className="flex items-center gap-3">
-                <ImageIcon size={16} />
+              <div className="flex items-center gap-2.5">
+                <ImageIcon size={15} />
                 <span>Moments Gallery</span>
               </div>
               <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${activeTab === "gallery" ? "bg-slate-950 text-white" : "bg-slate-800 text-slate-300"}`}>
@@ -734,18 +734,18 @@ export default function AdminPortal() {
 
             <button
               onClick={() => setActiveTab("settings")}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`flex items-center gap-2.5 px-3.5 md:px-4 py-2.5 md:py-3 rounded-2xl text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shrink-0 md:shrink md:w-full ${
                 activeTab === "settings"
                   ? "bg-lime-500 text-slate-950 shadow-md"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
-              <Settings size={16} />
+              <Settings size={15} />
               <span>Showroom Settings</span>
             </button>
           </nav>
 
-          <div className="mt-8 p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs text-slate-400 font-mono">
+          <div className="hidden md:block mt-8 p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs text-slate-400 font-mono">
             <div className="flex items-center gap-2 text-lime-400 font-bold mb-1">
               <Shield size={14} />
               <span>Hansagiri Security</span>

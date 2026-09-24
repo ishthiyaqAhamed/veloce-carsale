@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Coins, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, Coins, Globe, User } from "lucide-react";
 import TestDriveModal from "./TestDriveModal";
 import { useCurrency, CURRENCIES, CurrencyCode } from "../context/CurrencyContext";
 
@@ -99,8 +99,8 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Action button & Currency Converter */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Action button & Currency Converter & Admin Link */}
+          <div className="hidden lg:flex items-center gap-3">
             
             {/* Currency Converter Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -150,6 +150,16 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* Admin Portal User Icon */}
+            <Link
+              href="/admin"
+              className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 hover:text-slate-950 transition-all cursor-pointer shadow-2xs flex items-center justify-center group"
+              title="Admin Portal"
+              aria-label="Admin Portal"
+            >
+              <User size={16} className="text-slate-700 group-hover:text-slate-950 transition-transform group-hover:scale-110" />
+            </Link>
+
             <button
               onClick={() => setModalOpen(true)}
               className="px-5 py-2.5 bg-slate-900 text-white hover:bg-lime-500 hover:text-slate-950 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-xs"
@@ -158,7 +168,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile menu trigger */}
+          {/* Mobile menu trigger & admin icon */}
           <div className="flex items-center gap-2 md:hidden">
             {/* Mobile quick currency select */}
             <select
@@ -172,6 +182,15 @@ export default function Navbar() {
                 </option>
               ))}
             </select>
+
+            <Link
+              href="/admin"
+              className="p-2 text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-100"
+              title="Admin Portal"
+              aria-label="Admin Portal"
+            >
+              <User size={17} />
+            </Link>
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -221,6 +240,15 @@ export default function Navbar() {
               className="text-lg font-semibold text-slate-900 hover:text-[#84CC16]"
             >
               Contact
+            </Link>
+
+            <Link 
+              href="/admin" 
+              onClick={() => setMenuOpen(false)}
+              className="text-xs font-mono font-bold text-slate-600 hover:text-lime-600 uppercase flex items-center gap-2 pt-2 border-t border-slate-100"
+            >
+              <User size={14} />
+              <span>Admin Management Portal</span>
             </Link>
 
             {/* Currency selector inside mobile menu */}

@@ -54,7 +54,7 @@ export default function TestDriveModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.25 }}
-            className="relative w-full max-w-lg bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 z-10 shadow-2xl"
+            className="relative w-full max-w-lg bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 z-10 shadow-2xl max-h-[90vh] overflow-y-auto"
           >
             <button
               onClick={onClose}
