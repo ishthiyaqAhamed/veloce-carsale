@@ -50,15 +50,15 @@ export default function BrandShowcase() {
           {BRANDS.map((brand) => (
             <div
               key={brand.name}
-              className="h-20 sm:h-22 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 hover:bg-white p-3 flex items-center justify-center transition-all duration-300 group shadow-2xs"
+              className="h-24 sm:h-28 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 hover:bg-white p-4 flex items-center justify-center transition-all duration-300 group shadow-2xs hover:shadow-md"
             >
-              <div className="relative w-full h-10 flex items-center justify-center grayscale opacity-85 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105">
+              <div className="relative w-full h-14 sm:h-16 flex items-center justify-center grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
                 <Image
                   src={brand.image}
                   alt={`${brand.name} logo`}
-                  width={140}
-                  height={70}
-                  className="max-h-9 sm:max-h-10 w-full max-w-[100px] object-contain"
+                  width={220}
+                  height={110}
+                  className="max-h-12 sm:max-h-14 w-auto max-w-[120px] sm:max-w-[135px] object-contain"
                   unoptimized
                 />
               </div>
