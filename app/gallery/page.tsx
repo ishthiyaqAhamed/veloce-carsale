@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import Footer from "../components/Footer";
 
@@ -15,45 +14,75 @@ interface GalleryPhoto {
 
 const photos: GalleryPhoto[] = [
   {
-    id: "handover-1",
-    image: "/gallery/customer-key-handover-1.jpg",
-    alt: "Hansagiri Auto Traders Customer Key Handover Celebration",
+    id: "ribbon-cutting",
+    image: "/gallery/official-ribbon-cutting.jpg",
+    alt: "Hansagiri Auto Traders Official Ribbon Cutting Ceremony",
+    category: "opening",
+  },
+  {
+    id: "grand-key",
+    image: "/gallery/grand-key-presentation.jpg",
+    alt: "Hansagiri Auto Traders Grand Key Handover Presentation",
     category: "handover",
   },
   {
-    id: "opening-night",
+    id: "customer-handover-1",
+    image: "/gallery/customer-key-handover-1.jpg",
+    alt: "Hansagiri Auto Traders Customer Delivery Key Handover",
+    category: "handover",
+  },
+  {
+    id: "opening-keynote",
+    image: "/gallery/opening-keynote-speech.jpg",
+    alt: "Grand Opening Keynote Address & Red Carpet Audience",
+    category: "opening",
+  },
+  {
+    id: "cultural-performance",
+    image: "/gallery/traditional-cultural-performance.jpg",
+    alt: "Traditional Cultural Dance & Drum Performance on Stage",
+    category: "opening",
+  },
+  {
+    id: "host-address",
+    image: "/gallery/opening-host-address.jpg",
+    alt: "Opening Ceremony Official Address at the Podium",
+    category: "opening",
+  },
+  {
+    id: "opening-night-gala",
     image: "/hansagiri-showroom-night.png",
-    alt: "Hansagiri Auto Traders Night Grand Opening Gala",
+    alt: "Hansagiri Auto Traders Night Grand Opening Gala with Nissan GT-R",
     category: "opening",
   },
   {
     id: "opening-crowd",
     image: "/gallery/grand-opening-crowd.jpg",
-    alt: "Hansagiri Auto Traders Grand Opening Audience & Ceremony",
+    alt: "Grand Opening Ceremony Audience & Showroom Reception",
     category: "opening",
   },
   {
     id: "opening-dignitaries",
     image: "/gallery/grand-opening-dignitaries.jpg",
-    alt: "Hansagiri Auto Traders Grand Opening Dignitaries",
+    alt: "Hansagiri Auto Traders Directors & VIP Dignitaries",
     category: "opening",
   },
   {
     id: "team-celebration",
     image: "/gallery/team-staff-celebration.jpg",
-    alt: "Hansagiri Auto Traders Management & Team Celebration",
+    alt: "Hansagiri Auto Traders Management & Staff Celebration",
     category: "showroom",
   },
   {
     id: "client-consultation",
     image: "/gallery/client-consultation-showroom.jpg",
-    alt: "Hansagiri Auto Traders Vehicle Walkaround & Client Consultation",
+    alt: "Client Consultation & Vehicle Walkaround",
     category: "showroom",
   },
   {
     id: "showroom-daylight",
     image: "/hansagiri-showroom.jpg",
-    alt: "Hansagiri Auto Traders Beruwala Showroom Fleet",
+    alt: "Hansagiri Auto Traders Beruwala Daytime Showroom Fleet",
     category: "showroom",
   },
   {
@@ -71,7 +100,7 @@ export default function GalleryPage() {
   const filters = [
     { id: "all", label: "All Photos" },
     { id: "handover", label: "Key Handovers" },
-    { id: "opening", label: "Grand Opening" },
+    { id: "opening", label: "Grand Opening & Ceremony" },
     { id: "showroom", label: "Showroom & Team" },
   ];
 
@@ -160,7 +189,7 @@ export default function GalleryPage() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
-                priority={index < 4}
+                priority={index < 6}
               />
 
               <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -183,7 +212,7 @@ export default function GalleryPage() {
           {/* Close button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
+            className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors cursor-pointer"
             aria-label="Close image"
           >
             <X size={22} />
@@ -193,7 +222,7 @@ export default function GalleryPage() {
           {filteredPhotos.length > 1 && (
             <button
               onClick={prevPhoto}
-              className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
+              className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors cursor-pointer"
               aria-label="Previous image"
             >
               <ChevronLeft size={26} />
@@ -204,7 +233,7 @@ export default function GalleryPage() {
           {filteredPhotos.length > 1 && (
             <button
               onClick={nextPhoto}
-              className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
+              className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors cursor-pointer"
               aria-label="Next image"
             >
               <ChevronRight size={26} />
