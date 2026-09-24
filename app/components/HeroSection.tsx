@@ -47,15 +47,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex flex-wrap items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6 shadow-sm"
           >
             <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#C9FF00]">
               <span>★ 5.0</span>
               <span className="text-white/80 font-normal">(2 Google Reviews)</span>
-            </span>
-            <span className="text-white/30 hidden sm:inline">|</span>
-            <span className="text-xs font-mono uppercase tracking-wider text-slate-200 font-medium">
-              586 Galle Rd, Beruwala
             </span>
           </motion.div>
         </div>
@@ -113,18 +109,18 @@ export default function HeroSection() {
           {/* Stats Bar */}
           <div className="flex items-center gap-6 sm:gap-10 text-xs font-mono">
             <div>
-              <span className="text-slate-400 block uppercase text-[10px]">Google Rating</span>
-              <span className="font-display font-black text-lg text-[#C9FF00]">5.0 ★ Stars</span>
-            </div>
-            <div className="w-px h-6 bg-white/20" />
-            <div>
               <span className="text-slate-400 block uppercase text-[10px]">Quality</span>
-              <span className="font-display font-black text-lg text-white">100% Inspected</span>
+              <span className="font-display font-black text-lg text-[#C9FF00]">100% Inspected</span>
             </div>
             <div className="w-px h-6 bg-white/20" />
             <div>
               <span className="text-slate-400 block uppercase text-[10px]">Location</span>
-              <span className="font-display font-black text-lg text-sky-400">Beruwala, LK</span>
+              <span className="font-display font-black text-lg text-white">Beruwala, LK</span>
+            </div>
+            <div className="w-px h-6 bg-white/20" />
+            <div>
+              <span className="text-slate-400 block uppercase text-[10px]">Delivery</span>
+              <span className="font-display font-black text-lg text-sky-400">Islandwide</span>
             </div>
           </div>
 
