@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
       <HeroSection />
-      <BrandShowcase />
       <FeaturedVehicles />
+      <BrandShowcase />
       <TradeInValuation />
       <WhyChooseUs />
       <CtaBanner />

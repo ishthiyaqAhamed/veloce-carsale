@@ -26,42 +26,54 @@ const BRANDS: BrandItem[] = [
 
 export default function BrandShowcase() {
   return (
-    <section className="py-14 bg-white border-b border-slate-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 bg-gradient-to-b from-white via-slate-50/50 to-white border-b border-slate-200/80 overflow-hidden relative">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-red-500/3 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Subtle Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-2">
-            <span className="w-2 h-2 rounded-full bg-lime-500" />
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#E11D48] animate-pulse" />
             <span className="text-[11px] font-mono uppercase tracking-widest text-slate-700 font-bold">
-              Trusted Automotive Makes
+              14 Certified Marques
             </span>
           </div>
-          <h3 className="font-display font-black text-2xl sm:text-3xl uppercase text-slate-900 tracking-tight">
+          <h3 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl uppercase text-slate-900 tracking-tight">
             Brands In Our Showroom
           </h3>
-          <p className="text-xs sm:text-sm text-slate-500 font-normal mt-1">
+          <p className="text-xs sm:text-sm text-slate-500 font-normal mt-2 max-w-lg mx-auto">
             Certified Japanese and European manufacturers imported with genuine auction verification.
           </p>
         </div>
 
         {/* Brand Showcase Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4 sm:gap-5 items-center justify-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3.5 sm:gap-4.5 items-center justify-center">
           {BRANDS.map((brand) => (
             <div
               key={brand.name}
-              className="h-24 sm:h-28 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 hover:bg-white p-4 flex items-center justify-center transition-all duration-300 group shadow-2xs hover:shadow-md"
+              className="group relative h-26 sm:h-28 rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-1 p-4 flex flex-col items-center justify-center transition-all duration-300 overflow-hidden"
             >
-              <div className="relative w-full h-14 sm:h-16 flex items-center justify-center grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+              {/* Card Ambient Glow on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-red-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              
+              {/* Logo Presentation */}
+              <div className="relative w-full h-14 sm:h-16 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src={brand.image}
                   alt={`${brand.name} logo`}
-                  width={220}
-                  height={110}
-                  className="max-h-12 sm:max-h-14 w-auto max-w-[120px] sm:max-w-[135px] object-contain"
+                  width={240}
+                  height={120}
+                  className="max-h-12 sm:max-h-14 w-auto max-w-[110px] sm:max-w-[125px] object-contain transition-all duration-300"
                   unoptimized
                 />
               </div>
+
+              {/* Brand Label Pill */}
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400 group-hover:text-slate-800 transition-colors duration-200 mt-1 truncate max-w-full">
+                {brand.name}
+              </span>
             </div>
           ))}
         </div>
