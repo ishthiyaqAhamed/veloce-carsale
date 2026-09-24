@@ -1,66 +1,90 @@
 "use client";
 
 import { useState } from "react";
-import { vehicles } from "../lib/dummyData";
+import { vehicles, Vehicle } from "../lib/dummyData";
 import VehicleCard from "./VehicleCard";
+import BodyTypeSelector, { VehicleBodyType } from "./BodyTypeSelector";
+import { Car, SlidersHorizontal, Sparkles } from "lucide-react";
 
 export default function FeaturedVehicles() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-
-  const categories = [
-    { id: "all", label: "All Vehicles" },
-    { id: "suv", label: "SUVs & Utility" },
-    { id: "sedan", label: "Sedans" },
-    { id: "hybrid", label: "Hybrid & Eco" },
-    { id: "sports", label: "Sports & Performance" },
-  ];
+  const [selectedBodyType, setSelectedBodyType] = useState<VehicleBodyType>("all");
 
   const filteredVehicles =
-    activeCategory === "all"
+    selectedBodyType === "all"
       ? vehicles
-      : vehicles.filter((v) => v.category === activeCategory);
+      : vehicles.filter((v) => {
+          if (v.bodyType) {
+            return v.bodyType === selectedBodyType;
+          }
+          // Fallback matching
+          if (selectedBodyType === "cars") return v.category === "sedan" || v.category === "sports";
+          if (selectedBodyType === "suv") return v.category === "suv";
+          if (selectedBodyType === "double-cab" || selectedBodyType === "trucks") return v.category === "truck";
+          return true;
+        });
 
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto" id="inventory">
+    <section className="py-12 px-6 max-w-7xl mx-auto" id="inventory">
       
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
-          <span className="text-xs font-mono uppercase tracking-widest text-[#84CC16] font-bold block mb-2">
-            Quality Inventory
-          </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-2">
+            <span className="w-2 h-2 rounded-full bg-lime-500" />
+            <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
+              Showroom Fleet
+            </span>
+          </div>
           <h2 className="font-display font-black text-4xl sm:text-5xl uppercase text-slate-900 tracking-tight">
-            Featured Vehicles
+            Browse by Body Type
           </h2>
         </div>
-        <p className="text-sm text-slate-600 max-w-md leading-relaxed font-normal">
-          Explore our wide selection of popular SUVs, sedans, hybrids, and trucks from Toyota, Honda, Hyundai, BMW, Mercedes-Benz, and more.
-        </p>
+
+        <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
+          <span className="px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 font-bold text-slate-900">
+            {filteredVehicles.length} Vehicles Available
+          </span>
+          {selectedBodyType !== "all" && (
+            <button
+              onClick={() => setSelectedBodyType("all")}
+              className="text-xs font-mono text-[#E11D48] hover:underline cursor-pointer font-bold"
+            >
+              Reset Filters (Show All)
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Category Filter Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setActiveCategory(cat.id)}
-            className={`px-5 py-2.5 rounded-lg text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer ${
-              activeCategory === cat.id
-                ? "bg-slate-900 text-white font-bold shadow-sm"
-                : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300"
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
-      </div>
+      {/* Visual Vehicle Body Type Selector Bar */}
+      <BodyTypeSelector
+        selectedType={selectedBodyType}
+        onSelect={(type) => setSelectedBodyType(type)}
+      />
 
       {/* Vehicles Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredVehicles.map((vehicle) => (
-          <VehicleCard key={vehicle.id} vehicle={vehicle} />
-        ))}
-      </div>
+      {filteredVehicles.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredVehicles.map((vehicle) => (
+            <VehicleCard key={vehicle.id} vehicle={vehicle} />
+          ))}
+        </div>
+      ) : (
+        <div className="py-16 text-center bg-white rounded-3xl border border-slate-200 p-8">
+          <Car size={40} className="mx-auto text-slate-300 mb-3" />
+          <h3 className="font-display font-bold text-lg uppercase text-slate-800 mb-1">
+            No Vehicles Listed in This Category
+          </h3>
+          <p className="text-xs font-mono text-slate-500 mb-4">
+            We are constantly receiving new shipments at our Beruwala showroom.
+          </p>
+          <button
+            onClick={() => setSelectedBodyType("all")}
+            className="px-5 py-2.5 bg-slate-900 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-lime-500 hover:text-slate-950 transition-colors cursor-pointer"
+          >
+            View All Stock ({vehicles.length})
+          </button>
+        </div>
+      )}
 
     </section>
   );
