@@ -1,25 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --lime:    #C9FF00;
-  --pink:    #FF1F6E;
-  --cyan:    #00E5FF;
-  --void:    #06060E;
-  --surface: #0E0E1F;
-  --card:    #141428;
-  --border:  #1E1E3F;
-  --muted:   #6B6B8E;
+  --lime:    #84CC16;
+  --lime-bright: #C9FF00;
+  --pink:    #E11D48;
+  --cyan:    #0284C7;
+  --bg-main: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --border:  #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
 }
 
 @theme {
-  --color-void:    #06060E;
-  --color-surface: #0E0E1F;
-  --color-card:    #141428;
-  --color-border:  #1E1E3F;
-  --color-muted:   #6B6B8E;
-  --color-lime:    #C9FF00;
-  --color-pink:    #FF1F6E;
-  --color-cyan:    #00E5FF;
+  --color-lime:    #84CC16;
+  --color-lime-bright: #C9FF00;
+  --color-pink:    #E11D48;
+  --color-cyan:    #0284C7;
+  --color-bg-main: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-card:    #FFFFFF;
+  --color-border:  #E2E8F0;
+  --color-text-main: #0F172A;
+  --color-text-muted: #64748B;
 
   --font-display: var(--font-barlow), sans-serif;
   --font-body:    var(--font-dm), sans-serif;
@@ -30,143 +34,32 @@
 }
 
 body {
-  background-color: var(--void);
-  color: #FFFFFF;
+  background-color: #F8FAFC;
+  color: #0F172A;
   font-family: var(--font-body);
   overflow-x: hidden;
-  selection-background-color: var(--lime);
-  selection-color: var(--void);
 }
 
 ::selection {
   background-color: #C9FF00;
-  color: #06060E;
+  color: #0F172A;
 }
 
-/* Custom luxury scrollbar */
+/* Custom scrollbar for light theme */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #06060E;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E1E3F;
+  background: #CBD5E1;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9FF00;
-}
-
-/* Carbon weave micro-pattern overlay */
-.carbon-pattern {
-  background-image: 
-    linear-gradient(45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%);
-  background-size: 8px 8px;
-}
-
-/* Glassmorphism Luxury Panels */
-.luxury-glass {
-  background: rgba(14, 14, 31, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(30, 30, 63, 0.7);
-}
-
-.luxury-glass-void {
-  background: rgba(6, 6, 14, 0.82);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(30, 30, 63, 0.8);
-}
-
-/* Hairline Laser Borders */
-.laser-border-lime {
-  position: relative;
-}
-.laser-border-lime::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(201, 255, 0, 0.6), transparent 60%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.laser-border-cyan {
-  position: relative;
-}
-.laser-border-cyan::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.6), transparent 60%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Aerodynamic velocity stream animations */
-@keyframes windStream {
-  0% {
-    transform: translateX(120%) scaleX(0.2);
-    opacity: 0;
-  }
-  30% {
-    opacity: 0.8;
-  }
-  70% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(-120%) scaleX(1.4);
-    opacity: 0;
-  }
-}
-
-.animate-wind-stream {
-  animation: windStream 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.75;
-    transform: scale(1.08);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-
-@keyframes tachometerSweep {
-  0% { transform: rotate(-120deg); }
-  50% { transform: rotate(40deg); }
-  75% { transform: rotate(10deg); }
-  100% { transform: rotate(-120deg); }
-}
-
-.animate-tachometer {
-  animation: tachometerSweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  transform-origin: bottom center;
+  background: #94A3B8;
 }

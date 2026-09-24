@@ -26,14 +26,14 @@ export default function FeaturedVehicles() {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
-          <span className="text-xs font-mono uppercase tracking-widest text-[#C9FF00] block mb-2">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#84CC16] font-bold block mb-2">
             Quality Inventory
           </span>
-          <h2 className="font-display font-black text-4xl sm:text-5xl uppercase text-white tracking-tight">
+          <h2 className="font-display font-black text-4xl sm:text-5xl uppercase text-slate-900 tracking-tight">
             Featured Vehicles
           </h2>
         </div>
-        <p className="text-sm text-[#6B6B8E] max-w-md leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-md leading-relaxed font-normal">
           Explore our wide selection of popular SUVs, sedans, hybrids, and trucks from Toyota, Honda, Hyundai, BMW, Mercedes-Benz, and more.
         </p>
       </div>
@@ -46,8 +46,8 @@ export default function FeaturedVehicles() {
             onClick={() => setActiveCategory(cat.id)}
             className={`px-5 py-2.5 rounded-lg text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer ${
               activeCategory === cat.id
-                ? "bg-[#C9FF00] text-[#06060E] font-bold shadow-md"
-                : "bg-[#0E0E1F] text-[#6B6B8E] hover:text-white border border-[#1E1E3F]"
+                ? "bg-slate-900 text-white font-bold shadow-sm"
+                : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300"
             }`}
           >
             {cat.label}

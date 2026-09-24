@@ -16,9 +16,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "VELOCE | Luxury & Exotic Vehicle Dealership",
+  title: "VELOCE | Quality New & Pre-Owned Vehicle Dealership",
   description:
-    "Explore our collection of certified luxury, sports, and exotic vehicles. Nationwide delivery and flexible financing.",
+    "Explore our collection of certified SUVs, sedans, trucks, hybrids, and luxury vehicles. Trade-in, financing, and nationwide delivery available.",
 };
 
 export default function RootLayout({
@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${barlowCondensed.variable} ${dmSans.variable} antialiased bg-[#06060E] text-white min-h-screen flex flex-col selection:bg-[#C9FF00] selection:text-[#06060E]`}>
+    <html lang="en" className="light scroll-smooth">
+      <body className={`${barlowCondensed.variable} ${dmSans.variable} antialiased bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col`}>
         <Navbar />
         {children}
       </body>

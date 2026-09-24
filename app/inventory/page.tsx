@@ -2,23 +2,26 @@ import FeaturedVehicles from "../components/FeaturedVehicles";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Inventory | VELOCE Luxury Dealership",
-  description: "Browse our complete inventory of luxury, sports, and exotic vehicles.",
+  title: "Inventory | VELOCE Dealership",
+  description: "Browse our complete inventory of SUVs, sedans, trucks, electric vehicles, and sports cars.",
 };
 
 export default function InventoryPage() {
   return (
-    <main className="min-h-screen bg-[#06060E] text-white pt-20">
-      <div className="bg-[#0E0E1F]/50 py-12 px-6 border-b border-[#1E1E3F]">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 pt-20">
+      <div className="bg-white py-14 px-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#C9FF00] block mb-2">
-            Showroom Selection
-          </span>
-          <h1 className="font-display font-black text-4xl sm:text-5xl uppercase text-white mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
+            <span className="w-2 h-2 rounded-full bg-lime-500" />
+            <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
+              Showroom Selection
+            </span>
+          </div>
+          <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-3">
             Available Inventory
           </h1>
-          <p className="text-sm text-[#6B6B8E] max-w-lg leading-relaxed">
-            All vehicles in our showroom are certified, pre-inspected, and available for immediate test drives and nationwide delivery.
+          <p className="text-base text-slate-600 max-w-xl leading-relaxed">
+            All vehicles in our showroom are multi-point certified, pre-inspected, and available for immediate test drives and nationwide delivery.
           </p>
         </div>
       </div>

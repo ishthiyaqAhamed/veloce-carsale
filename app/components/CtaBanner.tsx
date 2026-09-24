@@ -10,40 +10,43 @@ export default function CtaBanner() {
 
   return (
     <>
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className="relative rounded-2xl bg-[#0E0E1F] border border-[#1E1E3F] p-8 sm:p-14 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="relative rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-14 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           
-          <div className="max-w-xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#C9FF00] block mb-2">
-              Ready to Upgrade?
+          {/* Subtle glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-lime-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-xl relative z-10">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#C9FF00] block mb-2 font-semibold">
+              Looking for a Specific Model?
             </span>
             <h2 className="font-display font-black text-3xl sm:text-4xl uppercase text-white tracking-tight mb-3">
-              Looking for a Specific Model?
+              We Source Any Car Nationwide
             </h2>
-            <p className="text-sm text-[#6B6B8E] leading-relaxed">
-              If you don&apos;t see the exact specification you are searching for, our vehicle procurement team can source it directly for you.
+            <p className="text-sm text-slate-300 leading-relaxed font-normal">
+              Whether you need a reliable Toyota Camry, Hyundai Tucson, Honda CR-V, or a bespoke luxury trim, our direct sourcing team finds and delivers it directly to you.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 relative z-10">
             <button
               onClick={() => setModalOpen(true)}
-              className="px-7 py-3.5 bg-[#C9FF00] text-[#06060E] font-display font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-white transition-colors cursor-pointer"
+              className="px-7 py-3.5 bg-[#C9FF00] hover:bg-white text-slate-950 font-display font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer font-bold"
             >
-              Contact Sales
+              Request Custom Sourcing
             </button>
             <Link
               href="/inventory"
-              className="px-6 py-3.5 bg-[#141428] border border-[#1E1E3F] text-white font-display font-bold text-xs uppercase tracking-wider rounded-lg hover:text-[#C9FF00] hover:border-[#C9FF00] transition-colors"
+              className="px-6 py-3.5 bg-slate-800/80 hover:bg-slate-700 text-white font-display font-bold text-xs uppercase tracking-wider rounded-xl border border-slate-700 hover:border-slate-500 transition-all"
             >
-              Browse All Cars
+              Browse All Inventory
             </Link>
           </div>
 
         </div>
       </section>
 
-      <TestDriveModal isOpen={modalOpen} onClose={() => setModalOpen(false)} carName="Vehicle Sourcing Inquiry" />
+      <TestDriveModal isOpen={modalOpen} onClose={() => setModalOpen(false)} carName="Custom Vehicle Sourcing" />
     </>
   );
 }

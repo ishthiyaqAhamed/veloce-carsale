@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import TestDriveModal from "./TestDriveModal";
 
@@ -11,7 +11,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#06060E] pt-28 pb-12 px-6 sm:px-12">
+      <section className="relative min-h-[92vh] w-full flex flex-col justify-between overflow-hidden bg-slate-950 pt-28 pb-14 px-6 sm:px-12 text-white">
         
         {/* ================= FULL-BLEED VIDEO BACKGROUND ================= */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -22,16 +22,15 @@ export default function HeroSection() {
             muted
             playsInline
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+            className="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-90"
           >
             <source src="/hero-car.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
-          {/* Cinematic darkness and vignette overlays for crisp text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#06060E]/95 via-[#06060E]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06060E] via-transparent to-[#06060E]/60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#06060E]/70 via-transparent to-transparent" />
+          {/* Cinematic darkness gradient masks */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/55 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40" />
 
           {/* Subtle Ambient Accent Glow */}
           <div 
@@ -48,17 +47,17 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0E0E1F]/80 border border-[#1E1E3F] backdrop-blur-md mb-6"
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-[#C9FF00] animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/90">
-              New & Pre-Owned Quality Vehicles
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-white font-medium">
+              New & Pre-Owned Quality Dealership
             </span>
           </motion.div>
         </div>
 
         {/* Center Main Headline & CTAs */}
-        <div className="relative z-20 max-w-7xl mx-auto w-full my-auto py-8">
+        <div className="relative z-20 max-w-7xl mx-auto w-full my-auto py-6">
           <div className="max-w-3xl">
             
             <motion.h1
@@ -70,7 +69,7 @@ export default function HeroSection() {
               Drive The <br />
               <span 
                 className="block text-[#C9FF00]"
-                style={{ textShadow: "0 0 50px rgba(201,255,0,0.35)" }}
+                style={{ textShadow: "0 0 50px rgba(201,255,0,0.4)" }}
               >
                 Extraordinary
               </span>
@@ -80,9 +79,9 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base sm:text-lg text-white/85 max-w-xl font-body leading-relaxed mb-10"
+              className="text-base sm:text-lg text-slate-200 max-w-xl font-body leading-relaxed mb-10"
             >
-              Explore our wide selection of reliable SUVs, sedans, trucks, hybrids, and luxury vehicles available for immediate delivery.
+              Explore our extensive selection of reliable SUVs, sedans, trucks, hybrids, and luxury vehicles available for immediate test drives and nationwide delivery.
             </motion.p>
 
             {/* Action Buttons */}
@@ -94,14 +93,14 @@ export default function HeroSection() {
             >
               <Link
                 href="/inventory"
-                className="px-8 py-4 bg-[#C9FF00] text-[#06060E] font-display font-black text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(201,255,0,0.3)] flex items-center gap-2 cursor-pointer"
+                className="px-8 py-4 bg-[#C9FF00] text-slate-950 font-display font-black text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-white transition-all shadow-lg flex items-center gap-2 cursor-pointer font-bold"
               >
                 <span>Explore Inventory</span>
                 <ArrowRight size={15} />
               </Link>
               <button
                 onClick={() => setModalOpen(true)}
-                className="px-7 py-4 bg-[#0E0E1F]/80 border border-[#1E1E3F] text-white font-display font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:border-white hover:text-white transition-all backdrop-blur-md cursor-pointer"
+                className="px-7 py-4 bg-white/10 border border-white/30 text-white font-display font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-white hover:text-slate-950 transition-all backdrop-blur-md cursor-pointer"
               >
                 Book Test Drive
               </button>
@@ -111,29 +110,29 @@ export default function HeroSection() {
         </div>
 
         {/* ================= BOTTOM STATS BAR ================= */}
-        <div className="relative z-20 max-w-7xl mx-auto w-full pt-6 border-t border-[#1E1E3F]/80 flex flex-wrap items-center justify-between gap-4">
+        <div className="relative z-20 max-w-7xl mx-auto w-full pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
           
           {/* Stats Bar */}
           <div className="flex items-center gap-6 sm:gap-10 text-xs font-mono">
             <div>
-              <span className="text-[#6B6B8E] block uppercase text-[10px]">Vehicles</span>
-              <span className="font-display font-black text-lg text-white">50+ Ready</span>
+              <span className="text-slate-400 block uppercase text-[10px]">Inventory</span>
+              <span className="font-display font-black text-lg text-white">50+ In Stock</span>
             </div>
-            <div className="w-px h-6 bg-[#1E1E3F]" />
+            <div className="w-px h-6 bg-white/20" />
             <div>
-              <span className="text-[#6B6B8E] block uppercase text-[10px]">Quality</span>
-              <span className="font-display font-black text-lg text-[#C9FF00]">100% Certified</span>
+              <span className="text-slate-400 block uppercase text-[10px]">Quality</span>
+              <span className="font-display font-black text-lg text-[#C9FF00]">100% Inspected</span>
             </div>
-            <div className="w-px h-6 bg-[#1E1E3F]" />
+            <div className="w-px h-6 bg-white/20" />
             <div>
-              <span className="text-[#6B6B8E] block uppercase text-[10px]">Delivery</span>
-              <span className="font-display font-black text-lg text-[#00E5FF]">Nationwide</span>
+              <span className="text-slate-400 block uppercase text-[10px]">Delivery</span>
+              <span className="font-display font-black text-lg text-sky-400">Nationwide</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-            <ShieldCheck size={14} className="text-[#C9FF00]" />
-            <span>Verified Luxury Dealership</span>
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-300">
+            <ShieldCheck size={16} className="text-[#C9FF00]" />
+            <span>Certified Dealership Quality</span>
           </div>
 
         </div>
@@ -143,7 +142,7 @@ export default function HeroSection() {
       <TestDriveModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        carName="Luxury Sports Vehicle"
+        carName="Vehicle Inquiry"
       />
     </>
   );
