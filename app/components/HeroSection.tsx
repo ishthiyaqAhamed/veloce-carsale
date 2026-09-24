@@ -102,12 +102,6 @@ export default function HeroSection() {
                 <span>Browse Vehicles</span>
                 <ArrowRight size={15} />
               </Link>
-              <a
-                href="tel:0777778298"
-                className="px-7 py-4 bg-white/10 border border-white/30 text-white font-display font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-white hover:text-slate-950 transition-all backdrop-blur-md cursor-pointer flex items-center gap-2"
-              >
-                <span>Call 077 777 8298</span>
-              </a>
             </motion.div>
 
           </div>
