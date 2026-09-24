@@ -1,4 +1,5 @@
 import HeroSection from "./components/HeroSection";
+import BrandShowcase from "./components/BrandShowcase";
 import FeaturedVehicles from "./components/FeaturedVehicles";
 import TradeInValuation from "./components/TradeInValuation";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
       <HeroSection />
+      <BrandShowcase />
       <FeaturedVehicles />
       <TradeInValuation />
       <WhyChooseUs />
