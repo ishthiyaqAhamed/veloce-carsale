@@ -3,16 +3,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Coins, Globe } from "lucide-react";
 import TestDriveModal from "./TestDriveModal";
 import { useCurrency, CURRENCIES, CurrencyCode } from "../context/CurrencyContext";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [currencyDropdownOpen, setCurrencyDropdownOpen] = useState(false);
   const { currency, setCurrency, activeCurrencyConfig } = useCurrency();
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Hide Navbar on Admin Portal routes
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   // Close dropdown when clicking outside
   useEffect(() => {

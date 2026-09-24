@@ -130,11 +130,12 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Hansagiri Auto Traders. All rights reserved.</p>
-          <div className="flex gap-6 font-medium">
+          <div className="flex items-center gap-6 font-medium">
             <Link href="/inventory" className="hover:text-slate-900 transition-colors">Inventory</Link>
-            <Link href="/#trade-in" className="hover:text-slate-900 transition-colors">Trade-In</Link>
+            <Link href="/gallery" className="hover:text-slate-900 transition-colors">Moments</Link>
             <Link href="/about" className="hover:text-slate-900 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-slate-900 transition-colors">Contact</Link>
+            <Link href="/admin" className="text-slate-400 hover:text-lime-600 transition-colors font-mono font-bold">Admin Portal</Link>
           </div>
         </div>
 

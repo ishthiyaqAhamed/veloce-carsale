@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Footer from "../components/Footer";
+import CustomerReviewsSection from "../components/CustomerReviewsSection";
 import { ShieldCheck, Award, Users, Star, MapPin, Phone, Clock, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
@@ -162,6 +163,9 @@ export default function AboutPage() {
           </div>
 
         </div>
+
+        {/* Rate & Review Us Section */}
+        <CustomerReviewsSection />
 
         {/* Location & Showroom Map Section */}
         <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 shadow-sm overflow-hidden">
