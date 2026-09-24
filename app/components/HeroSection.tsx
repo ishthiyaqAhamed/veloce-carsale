@@ -52,7 +52,7 @@ export default function HeroSection() {
           >
             <span className="w-2 h-2 rounded-full bg-[#C9FF00] animate-pulse" />
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/90">
-              Premier Luxury & Exotic Dealership
+              New & Pre-Owned Quality Vehicles
             </span>
           </motion.div>
         </div>
@@ -82,7 +82,7 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-base sm:text-lg text-white/85 max-w-xl font-body leading-relaxed mb-10"
             >
-              Explore our handpicked collection of high-performance sports cars, luxury sedans, and exotic vehicles available for immediate delivery.
+              Explore our wide selection of reliable SUVs, sedans, trucks, hybrids, and luxury vehicles available for immediate delivery.
             </motion.p>
 
             {/* Action Buttons */}

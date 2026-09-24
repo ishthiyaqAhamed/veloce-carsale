@@ -9,9 +9,10 @@ export default function FeaturedVehicles() {
 
   const categories = [
     { id: "all", label: "All Vehicles" },
-    { id: "sports", label: "Sports & Supercars" },
-    { id: "luxury", label: "Luxury Sedans" },
-    { id: "suv", label: "Luxury SUVs" },
+    { id: "suv", label: "SUVs & Crossovers" },
+    { id: "sedan", label: "Sedans" },
+    { id: "hybrid", label: "Hybrid & Electric" },
+    { id: "truck", label: "Trucks" },
   ];
 
   const filteredVehicles =
@@ -26,18 +27,18 @@ export default function FeaturedVehicles() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
           <span className="text-xs font-mono uppercase tracking-widest text-[#C9FF00] block mb-2">
-            Curated Collection
+            Quality Inventory
           </span>
           <h2 className="font-display font-black text-4xl sm:text-5xl uppercase text-white tracking-tight">
-            Featured Inventory
+            Featured Vehicles
           </h2>
         </div>
         <p className="text-sm text-[#6B6B8E] max-w-md leading-relaxed">
-          Every vehicle is thoroughly inspected, certified, and maintained to meet our stringent quality standards.
+          Explore our wide selection of popular SUVs, sedans, hybrids, and trucks from Toyota, Honda, Hyundai, BMW, Mercedes-Benz, and more.
         </p>
       </div>
 
-      {/* Category Tabs */}
+      {/* Category Filter Tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none">
         {categories.map((cat) => (
           <button
