@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheck, Plane, FileCheck, KeyRound, Sparkles } from "lucide-react";
+import { ShieldCheck, Plane, FileCheck, KeyRound } from "lucide-react";
 
 const steps = [
   {
@@ -50,7 +50,7 @@ export default function AcquisitionJourney() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Sparkles size={16} className="text-[#FF1F6E]" />
+              <span className="w-2 h-2 rounded-full bg-[#FF1F6E]" />
               <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FF1F6E]">
                 Private Client Protocol
               </p>

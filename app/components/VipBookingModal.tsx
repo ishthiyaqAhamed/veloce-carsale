@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, ShieldCheck, Calendar, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
+import { X, ShieldCheck, Calendar, MapPin, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface VipBookingModalProps {
@@ -100,7 +100,7 @@ export default function VipBookingModal({
                 <>
                   <div className="mb-6">
                     <div className="flex items-center gap-2 mb-2">
-                      <Sparkles size={16} className="text-[#C9FF00]" />
+                      <span className="w-2 h-2 rounded-full bg-[#C9FF00]" />
                       <span className="font-body text-xs font-semibold text-[#C9FF00] uppercase tracking-[0.2em]">
                         Private Concierge Desk
                       </span>

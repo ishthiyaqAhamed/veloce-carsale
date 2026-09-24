@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sparkles, Check, Sliders, Shield, Palette, Layers, CircleDot } from "lucide-react";
+import { Check, Sliders, Shield, Palette, Layers, CircleDot } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import VipBookingModal from "./VipBookingModal";
 
@@ -95,7 +95,7 @@ export default function AtelierConfigurator() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Sparkles size={16} className="text-[#C9FF00]" />
+              <span className="w-2 h-2 rounded-full bg-[#C9FF00]" />
               <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#C9FF00]">
                 Interactive Customizer
               </p>

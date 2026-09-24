@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, DollarSign, RefreshCw, ShieldCheck, Sparkles, TrendingUp, Key } from "lucide-react";
+import { ArrowRight, CheckCircle2, DollarSign, RefreshCw, ShieldCheck, TrendingUp, Key } from "lucide-react";
 import TestDriveModal from "./TestDriveModal";
 
 export default function TradeInValuation() {
@@ -204,7 +204,7 @@ export default function TradeInValuation() {
               <span>Complimentary On-Site Inspection & Immediate Bank Wire Settlement</span>
             </div>
             <div className="flex items-center gap-2 font-semibold text-slate-700">
-              <Sparkles size={16} className="text-lime-600" />
+              <CheckCircle2 size={16} className="text-lime-600" />
               <span>No Purchase Obligation Required</span>
             </div>
           </div>
