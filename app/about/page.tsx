@@ -31,14 +31,15 @@ export default function AboutPage() {
             </div>
 
             <div className="shrink-0">
-              <div className="relative h-28 w-60 sm:h-36 sm:w-72 bg-slate-950 rounded-2xl p-4 flex items-center justify-center border border-slate-800 shadow-xl overflow-hidden">
+              <div className="relative h-20 w-48 sm:h-28 sm:w-60 flex items-center justify-center">
                 <Image
                   src="/hansagiri-logo.png"
                   alt="Hansagiri Auto Traders Official Gold Logo"
                   width={260}
                   height={100}
-                  className="object-contain max-h-full w-auto"
+                  className="w-full h-full object-contain"
                   priority
+                  unoptimized
                 />
               </div>
             </div>

@@ -37,14 +37,15 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative h-11 w-28 sm:h-12 sm:w-32 bg-slate-950 rounded-xl p-1 flex items-center justify-center border border-slate-800 shadow-xs overflow-hidden transition-transform group-hover:scale-102">
+            <div className="relative h-10 w-28 sm:h-12 sm:w-36 flex items-center justify-center transition-transform group-hover:scale-102">
               <Image
                 src="/hansagiri-logo.png"
                 alt="Hansagiri Auto Traders Logo"
-                width={160}
-                height={60}
+                width={180}
+                height={65}
                 className="w-full h-full object-contain"
                 priority
+                unoptimized
               />
             </div>
             <div className="flex flex-col">

@@ -12,13 +12,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <div className="relative h-16 w-48 bg-slate-950 rounded-2xl p-2 flex items-center justify-center border border-slate-800 shadow-sm overflow-hidden">
+              <div className="relative h-14 w-48 flex items-center justify-start">
                 <Image
                   src="/hansagiri-logo.png"
                   alt="Hansagiri Auto Traders Logo"
-                  width={180}
-                  height={60}
-                  className="object-contain max-h-full w-auto"
+                  width={200}
+                  height={70}
+                  className="w-full h-full object-contain object-left"
+                  unoptimized
                 />
               </div>
             </Link>
