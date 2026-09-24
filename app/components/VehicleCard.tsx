@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight, Fuel, Gauge } from "lucide-react";
 import { Vehicle } from "../lib/dummyData";
 import TestDriveModal from "./TestDriveModal";
+import { useCurrency } from "../context/CurrencyContext";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -12,6 +13,7 @@ interface VehicleCardProps {
 
 export default function VehicleCard({ vehicle }: VehicleCardProps) {
   const [modalOpen, setModalOpen] = useState(false);
+  const { formatPrice } = useCurrency();
 
   return (
     <>
@@ -83,7 +85,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
             <div>
               <p className="text-[10px] text-slate-500 uppercase font-mono font-semibold">Price</p>
               <p className="font-display font-black text-xl text-slate-950">
-                LKR {vehicle.price.toLocaleString()}
+                {formatPrice(vehicle.price)}
               </p>
             </div>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { CurrencyProvider } from "./context/CurrencyContext";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -29,8 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="light scroll-smooth">
       <body className={`${barlowCondensed.variable} ${dmSans.variable} antialiased bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col`}>
-        <Navbar />
-        {children}
+        <CurrencyProvider>
+          <Navbar />
+          {children}
+        </CurrencyProvider>
       </body>
     </html>
   );
