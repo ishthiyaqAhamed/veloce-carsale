@@ -26,7 +26,7 @@ export default function InventoryPage() {
         </div>
       </div>
 
-      <FeaturedVehicles />
+      <FeaturedVehicles showBodyTypeFilter={true} />
       <Footer />
     </main>
   );
