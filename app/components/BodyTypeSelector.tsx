@@ -79,8 +79,8 @@ export default function BodyTypeSelector({
                 className="flex-1 min-w-[78px] sm:min-w-[95px] max-w-[130px] flex flex-col items-center justify-end group transition-all cursor-pointer relative pb-2"
               >
                 {/* Exact Black Vehicle Icon */}
-                <div className="w-full h-7 sm:h-8 flex items-center justify-center mb-1.5 px-0.5">
-                  <div className="relative w-20 sm:w-24 h-6 sm:h-7 transition-transform duration-200 group-hover:scale-105">
+                <div className="w-full h-8 sm:h-9 flex items-center justify-center mb-1.5 px-0.5">
+                  <div className="relative w-20 sm:w-24 h-7 sm:h-8 transition-transform duration-200 group-hover:scale-105">
                     <Image
                       src={cat.image}
                       alt={cat.label}

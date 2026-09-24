@@ -5,24 +5,23 @@ import Image from "next/image";
 interface BrandItem {
   name: string;
   image: string;
-  width: number;
 }
 
 const BRANDS: BrandItem[] = [
-  { name: "Toyota", image: "/brands/toyota.png", width: 75 },
-  { name: "Nissan", image: "/brands/nissan.png", width: 70 },
-  { name: "Honda", image: "/brands/honda.png", width: 80 },
-  { name: "Suzuki", image: "/brands/suzuki.png", width: 110 },
-  { name: "Mercedes-Benz", image: "/brands/mercedes-benz.png", width: 85 },
-  { name: "BMW", image: "/brands/bmw.png", width: 65 },
-  { name: "Lexus", image: "/brands/lexus.png", width: 90 },
-  { name: "Audi", image: "/brands/audi.png", width: 80 },
-  { name: "Volkswagen", image: "/brands/volkswagen.png", width: 65 },
-  { name: "Ford", image: "/brands/ford.png", width: 100 },
-  { name: "Mitsubishi", image: "/brands/mitsubishi.png", width: 75 },
-  { name: "Mazda", image: "/brands/mazda.png", width: 70 },
-  { name: "Kia", image: "/brands/kia.png", width: 95 },
-  { name: "Foton", image: "/brands/foton.png", width: 105 },
+  { name: "Toyota", image: "/brands/toyota.png" },
+  { name: "Nissan", image: "/brands/nissan.png" },
+  { name: "Honda", image: "/brands/honda.png" },
+  { name: "Suzuki", image: "/brands/suzuki.png" },
+  { name: "Mercedes-Benz", image: "/brands/mercedes-benz.png" },
+  { name: "BMW", image: "/brands/bmw.png" },
+  { name: "Lexus", image: "/brands/lexus.png" },
+  { name: "Audi", image: "/brands/audi.png" },
+  { name: "Volkswagen", image: "/brands/volkswagen.png" },
+  { name: "Ford", image: "/brands/ford.png" },
+  { name: "Mitsubishi", image: "/brands/mitsubishi.png" },
+  { name: "Mazda", image: "/brands/mazda.png" },
+  { name: "Kia", image: "/brands/kia.png" },
+  { name: "Foton", image: "/brands/foton.png" },
 ];
 
 export default function BrandShowcase() {
@@ -47,22 +46,19 @@ export default function BrandShowcase() {
         </div>
 
         {/* Brand Showcase Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4 sm:gap-6 items-center justify-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4 sm:gap-5 items-center justify-center">
           {BRANDS.map((brand) => (
             <div
               key={brand.name}
-              className="h-20 sm:h-24 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-slate-300 hover:bg-white p-4 flex items-center justify-center transition-all duration-300 group shadow-2xs"
+              className="h-20 sm:h-22 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 hover:bg-white p-3 flex items-center justify-center transition-all duration-300 group shadow-2xs"
             >
-              <div
-                className="relative h-10 w-full flex items-center justify-center grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105"
-                style={{ maxWidth: brand.width }}
-              >
+              <div className="relative w-full h-10 flex items-center justify-center grayscale opacity-85 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105">
                 <Image
                   src={brand.image}
                   alt={`${brand.name} logo`}
-                  width={brand.width}
-                  height={45}
-                  className="max-h-10 w-auto object-contain"
+                  width={140}
+                  height={70}
+                  className="max-h-9 sm:max-h-10 w-full max-w-[100px] object-contain"
                   unoptimized
                 />
               </div>
