@@ -16,12 +16,7 @@ export default function Navbar() {
   const { currency, setCurrency, activeCurrencyConfig } = useCurrency();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Hide Navbar on Admin Portal routes
-  if (pathname?.startsWith("/admin")) {
-    return null;
-  }
-
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (must be called unconditionally)
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -36,6 +31,11 @@ export default function Navbar() {
     setCurrency(code);
     setCurrencyDropdownOpen(false);
   };
+
+  // Hide Navbar on Admin Portal routes AFTER all hooks are declared
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <>
