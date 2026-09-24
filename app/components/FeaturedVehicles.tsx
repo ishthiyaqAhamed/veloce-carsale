@@ -9,10 +9,10 @@ export default function FeaturedVehicles() {
 
   const categories = [
     { id: "all", label: "All Vehicles" },
-    { id: "suv", label: "SUVs & Crossovers" },
+    { id: "suv", label: "SUVs & Utility" },
     { id: "sedan", label: "Sedans" },
-    { id: "hybrid", label: "Hybrid & Electric" },
-    { id: "truck", label: "Trucks" },
+    { id: "hybrid", label: "Hybrid & Eco" },
+    { id: "sports", label: "Sports & Performance" },
   ];
 
   const filteredVehicles =

@@ -61,10 +61,10 @@ export default function Navbar() {
               Inventory
             </Link>
             <Link 
-              href="/#trade-in" 
+              href="/gallery" 
               className="text-sm font-semibold text-slate-700 hover:text-slate-950 transition-colors"
             >
-              Trade-In
+              Gallery
             </Link>
             <Link 
               href="/about" 
@@ -183,11 +183,11 @@ export default function Navbar() {
               Inventory
             </Link>
             <Link 
-              href="/#trade-in" 
+              href="/gallery" 
               onClick={() => setMenuOpen(false)}
               className="text-lg font-semibold text-slate-900 hover:text-[#84CC16]"
             >
-              Trade-In
+              Gallery
             </Link>
             <Link 
               href="/about" 

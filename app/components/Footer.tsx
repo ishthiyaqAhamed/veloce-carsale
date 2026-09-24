@@ -65,8 +65,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#trade-in" className="hover:text-lime-600 transition-colors">
-                  Trade-In Evaluation
+                <Link href="/gallery" className="hover:text-lime-600 transition-colors">
+                  Customer Gallery & Events
                 </Link>
               </li>
               <li>
