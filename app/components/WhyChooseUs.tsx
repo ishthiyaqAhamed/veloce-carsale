@@ -32,13 +32,13 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-mono uppercase tracking-widest text-[#0284C7] font-bold block mb-2">
-            The Veloce Difference
+            The Hansagiri Advantage
           </span>
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-900 tracking-tight">
-            Why Buy With Us
+            Why Buy With Hansagiri
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed font-normal">
-            We provide a transparent, customer-first car buying experience with peace of mind guaranteed on every vehicle.
+            Dedicated to providing the best vehicle deals, honest pricing, and highly dependable customer service in Beruwala and nationwide.
           </p>
         </div>
 

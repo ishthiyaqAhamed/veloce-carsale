@@ -165,18 +165,29 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-lime-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-slate-900 block">Beverly Hills Showroom</strong>
-                    <span>468 N Rodeo Drive, Beverly Hills, CA 90210</span>
+                    <strong className="text-slate-900 block">Hansagiri Auto Traders</strong>
+                    <span>586 Galle Rd, Beruwala 61010</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-lime-600 shrink-0" />
-                  <span>(800) 555-0199</span>
+                  <a href="tel:0777778298" className="hover:text-slate-900 font-bold">077 777 8298</a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail size={18} className="text-lime-600 shrink-0" />
-                  <span>sales@velocecars.com</span>
+                  <Clock size={18} className="text-lime-600 shrink-0" />
+                  <span>Open Daily · Closes 8 PM</span>
                 </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-slate-100">
+                <a
+                  href="https://www.google.com/search?q=hansagiri+auto+traders+beruwala"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all inline-block"
+                >
+                  Get Google Maps Directions →
+                </a>
               </div>
             </div>
 
@@ -187,16 +198,16 @@ export default function ContactPage() {
               </div>
               <ul className="space-y-2 text-sm text-slate-600 font-mono">
                 <li className="flex justify-between border-b border-slate-100 pb-1.5">
-                  <span>Monday - Friday:</span>
-                  <span className="text-slate-900 font-bold">9:00 AM - 7:00 PM</span>
+                  <span>Monday - Saturday:</span>
+                  <span className="text-slate-900 font-bold">8:00 AM - 8:00 PM</span>
                 </li>
                 <li className="flex justify-between border-b border-slate-100 pb-1.5">
-                  <span>Saturday:</span>
-                  <span className="text-slate-900 font-bold">10:00 AM - 6:00 PM</span>
+                  <span>Sunday:</span>
+                  <span className="text-slate-900 font-bold">8:00 AM - 8:00 PM</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span className="text-lime-600 font-bold">By Appointment</span>
+                  <span>Current Status:</span>
+                  <span className="text-lime-600 font-bold">Open · Closes 8 PM</span>
                 </li>
               </ul>
             </div>

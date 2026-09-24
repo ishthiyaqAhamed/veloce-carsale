@@ -16,9 +16,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "VELOCE | Quality New & Pre-Owned Vehicle Dealership",
+  title: "Hansagiri Auto Traders | Premier Car Dealer in Beruwala",
   description:
-    "Explore our collection of certified SUVs, sedans, trucks, hybrids, and luxury vehicles. Trade-in, financing, and nationwide delivery available.",
+    "Hansagiri Auto Traders is a premier auto dealership in Beruwala specializing in high-quality new and pre-owned vehicles with honest pricing and dependable service. 586 Galle Rd, Beruwala.",
 };
 
 export default function RootLayout({

@@ -2,8 +2,8 @@ import FeaturedVehicles from "../components/FeaturedVehicles";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Inventory | VELOCE Dealership",
-  description: "Browse our complete inventory of SUVs, sedans, trucks, electric vehicles, and sports cars.",
+  title: "Vehicle Inventory | Hansagiri Auto Traders Beruwala",
+  description: "Browse high-quality new and pre-owned vehicles at Hansagiri Auto Traders in Beruwala.",
 };
 
 export default function InventoryPage() {

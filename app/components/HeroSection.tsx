@@ -47,11 +47,15 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6"
+            className="inline-flex flex-wrap items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-[#C9FF00] animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-white font-medium">
-              New & Pre-Owned Quality Dealership
+            <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#C9FF00]">
+              <span>★ 5.0</span>
+              <span className="text-white/80 font-normal">(2 Google Reviews)</span>
+            </span>
+            <span className="text-white/30 hidden sm:inline">|</span>
+            <span className="text-xs font-mono uppercase tracking-wider text-slate-200 font-medium">
+              586 Galle Rd, Beruwala
             </span>
           </motion.div>
         </div>
@@ -66,12 +70,12 @@ export default function HeroSection() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="font-display font-black text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tight text-white leading-[0.92] mb-6"
             >
-              Drive The <br />
+              Hansagiri <br />
               <span 
                 className="block text-[#C9FF00]"
                 style={{ textShadow: "0 0 50px rgba(201,255,0,0.4)" }}
               >
-                Extraordinary
+                Auto Traders
               </span>
             </motion.h1>
 
@@ -79,9 +83,9 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-200 max-w-xl font-body leading-relaxed mb-10"
+              className="text-base sm:text-lg text-slate-200 max-w-xl font-body leading-relaxed mb-10 font-normal"
             >
-              Explore our extensive selection of reliable SUVs, sedans, trucks, hybrids, and luxury vehicles available for immediate test drives and nationwide delivery.
+              Beruwala&apos;s premier auto dealership specializing in high-quality new and pre-owned vehicles. Honest pricing, guaranteed transparency, and dependable customer service.
             </motion.p>
 
             {/* Action Buttons */}
@@ -95,15 +99,15 @@ export default function HeroSection() {
                 href="/inventory"
                 className="px-8 py-4 bg-[#C9FF00] text-slate-950 font-display font-black text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-white transition-all shadow-lg flex items-center gap-2 cursor-pointer font-bold"
               >
-                <span>Explore Inventory</span>
+                <span>Browse Vehicles</span>
                 <ArrowRight size={15} />
               </Link>
-              <button
-                onClick={() => setModalOpen(true)}
-                className="px-7 py-4 bg-white/10 border border-white/30 text-white font-display font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-white hover:text-slate-950 transition-all backdrop-blur-md cursor-pointer"
+              <a
+                href="tel:0777778298"
+                className="px-7 py-4 bg-white/10 border border-white/30 text-white font-display font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-white hover:text-slate-950 transition-all backdrop-blur-md cursor-pointer flex items-center gap-2"
               >
-                Book Test Drive
-              </button>
+                <span>Call 077 777 8298</span>
+              </a>
             </motion.div>
 
           </div>
@@ -115,24 +119,24 @@ export default function HeroSection() {
           {/* Stats Bar */}
           <div className="flex items-center gap-6 sm:gap-10 text-xs font-mono">
             <div>
-              <span className="text-slate-400 block uppercase text-[10px]">Inventory</span>
-              <span className="font-display font-black text-lg text-white">50+ In Stock</span>
+              <span className="text-slate-400 block uppercase text-[10px]">Google Rating</span>
+              <span className="font-display font-black text-lg text-[#C9FF00]">5.0 ★ Stars</span>
             </div>
             <div className="w-px h-6 bg-white/20" />
             <div>
               <span className="text-slate-400 block uppercase text-[10px]">Quality</span>
-              <span className="font-display font-black text-lg text-[#C9FF00]">100% Inspected</span>
+              <span className="font-display font-black text-lg text-white">100% Inspected</span>
             </div>
             <div className="w-px h-6 bg-white/20" />
             <div>
-              <span className="text-slate-400 block uppercase text-[10px]">Delivery</span>
-              <span className="font-display font-black text-lg text-sky-400">Nationwide</span>
+              <span className="text-slate-400 block uppercase text-[10px]">Location</span>
+              <span className="font-display font-black text-lg text-sky-400">Beruwala, LK</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2 text-xs font-mono text-slate-300">
             <ShieldCheck size={16} className="text-[#C9FF00]" />
-            <span>Certified Dealership Quality</span>
+            <span>Guaranteed Transparent Deals</span>
           </div>
 
         </div>

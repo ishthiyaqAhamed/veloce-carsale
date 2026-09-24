@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Star, ExternalLink, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,24 +10,40 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="font-display text-3xl font-black tracking-widest text-slate-900 block mb-3">
-              VELOCE<span className="text-lime-600">.</span>
+            <Link href="/" className="font-display text-3xl font-black tracking-widest text-slate-900 block mb-2">
+              HANSAGIRI<span className="text-lime-600">.</span>
             </Link>
-            <p className="text-sm text-slate-600 max-w-sm leading-relaxed mb-6 font-normal">
-              Premier dealership specializing in reliable family SUVs, sedans, trucks, electric vehicles, and certified pre-owned automobiles.
+            <p className="text-xs font-mono uppercase tracking-wider text-slate-500 font-bold mb-4">
+              Hansagiri Auto Traders · Car Dealer in Beruwala
             </p>
+
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono font-bold mb-4">
+              <span className="flex items-center text-amber-500">
+                <Star size={13} fill="currentColor" />
+                <Star size={13} fill="currentColor" />
+                <Star size={13} fill="currentColor" />
+                <Star size={13} fill="currentColor" />
+                <Star size={13} fill="currentColor" />
+              </span>
+              <span>5.0 (2 Google Reviews)</span>
+            </div>
+
+            <p className="text-sm text-slate-600 max-w-lg leading-relaxed mb-6 font-normal">
+              Hansagiri Auto Traders is a premier auto dealership specializing in high-quality new and pre-owned vehicles. We are dedicated to providing the best vehicle deals, honest pricing, and highly dependable customer service. Visit our showroom today and drive with confidence every time.
+            </p>
+            
             <div className="space-y-2.5 text-xs text-slate-600 font-mono">
               <p className="flex items-center gap-2">
-                <MapPin size={15} className="text-lime-600" />
-                <span>468 N Rodeo Drive, Beverly Hills, CA 90210</span>
+                <MapPin size={15} className="text-lime-600 shrink-0" />
+                <span>586 Galle Rd, Beruwala 61010</span>
               </p>
               <p className="flex items-center gap-2">
-                <Phone size={15} className="text-lime-600" />
-                <span>(800) 555-0199</span>
+                <Phone size={15} className="text-lime-600 shrink-0" />
+                <a href="tel:0777778298" className="hover:text-slate-900 font-bold">077 777 8298</a>
               </p>
               <p className="flex items-center gap-2">
-                <Mail size={15} className="text-lime-600" />
-                <span>sales@velocecars.com</span>
+                <Clock size={15} className="text-lime-600 shrink-0" />
+                <span>Open Daily · Closes 8 PM</span>
               </p>
             </div>
           </div>
@@ -35,27 +51,32 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-display font-bold text-base uppercase text-slate-900 mb-4">
-              Explore Showroom
+              Navigation
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-600 font-medium">
               <li>
+                <Link href="/" className="hover:text-lime-600 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link href="/inventory" className="hover:text-lime-600 transition-colors">
-                  All Inventory
+                  Vehicles For Sale
                 </Link>
               </li>
               <li>
                 <Link href="/#trade-in" className="hover:text-lime-600 transition-colors">
-                  Vehicle Trade-In
+                  Trade-In Evaluation
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-lime-600 transition-colors">
-                  About Us
+                  About Hansagiri
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-lime-600 transition-colors">
-                  Contact Us
+                  Contact & Directions
                 </Link>
               </li>
             </ul>
@@ -68,25 +89,37 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600 font-mono">
               <li className="flex justify-between border-b border-slate-100 pb-1.5">
-                <span>Mon - Fri:</span>
-                <span className="text-slate-900 font-bold">9:00 AM - 7:00 PM</span>
+                <span>Monday - Saturday:</span>
+                <span className="text-slate-900 font-bold">8:00 AM - 8:00 PM</span>
               </li>
               <li className="flex justify-between border-b border-slate-100 pb-1.5">
-                <span>Saturday:</span>
-                <span className="text-slate-900 font-bold">10:00 AM - 6:00 PM</span>
-              </li>
-              <li className="flex justify-between">
                 <span>Sunday:</span>
-                <span className="text-lime-600 font-bold">By Appointment</span>
+                <span className="text-slate-900 font-bold">8:00 AM - 8:00 PM</span>
+              </li>
+              <li className="flex justify-between pt-1">
+                <span>Status:</span>
+                <span className="text-lime-600 font-bold">Open · Closes 8 PM</span>
               </li>
             </ul>
+
+            <div className="mt-6 pt-4 border-t border-slate-100">
+              <a
+                href="https://www.google.com/search?q=hansagiri+auto+traders+beruwala"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-lime-700 hover:text-lime-800 font-bold"
+              >
+                <span>View on Google Maps</span>
+                <ExternalLink size={12} />
+              </a>
+            </div>
           </div>
 
         </div>
 
         {/* Bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} VELOCE Motors. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Hansagiri Auto Traders. All rights reserved.</p>
           <div className="flex gap-6 font-medium">
             <Link href="/inventory" className="hover:text-slate-900 transition-colors">Inventory</Link>
             <Link href="/#trade-in" className="hover:text-slate-900 transition-colors">Trade-In</Link>

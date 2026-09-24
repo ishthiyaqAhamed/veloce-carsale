@@ -15,14 +15,19 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-display text-3xl font-black tracking-widest text-slate-900">
-              VELOCE<span className="text-[#84CC16]">.</span>
-            </span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="flex flex-col">
+              <span className="font-display text-2xl sm:text-3xl font-black tracking-wider text-slate-900 leading-none">
+                HANSAGIRI<span className="text-lime-600">.</span>
+              </span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-slate-500 font-bold -mt-0.5">
+                Auto Traders · Beruwala
+              </span>
+            </div>
           </Link>
 
           {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             <Link 
               href="/" 
               className="text-sm font-semibold text-slate-700 hover:text-slate-950 transition-colors"
@@ -55,20 +60,20 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Action button */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Action button & Phone */}
+          <div className="hidden lg:flex items-center gap-4">
             <a 
-              href="tel:+18005550199" 
-              className="text-xs text-slate-500 hover:text-slate-900 flex items-center gap-1.5 transition-colors font-mono font-medium"
+              href="tel:0777778298" 
+              className="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-xs text-slate-800 flex items-center gap-2 transition-colors font-mono font-bold"
             >
-              <Phone size={13} className="text-slate-700" />
-              <span>(800) 555-0199</span>
+              <Phone size={13} className="text-lime-600" />
+              <span>077 777 8298</span>
             </a>
             <button
               onClick={() => setModalOpen(true)}
-              className="px-5 py-2.5 bg-slate-900 text-white hover:bg-black font-display font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-xs"
+              className="px-5 py-2.5 bg-slate-900 text-white hover:bg-lime-500 hover:text-slate-950 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-xs"
             >
-              Book Test Drive
+              Inquire Now
             </button>
           </div>
 
