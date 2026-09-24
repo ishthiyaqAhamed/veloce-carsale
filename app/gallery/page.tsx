@@ -14,10 +14,130 @@ interface GalleryPhoto {
 
 const photos: GalleryPhoto[] = [
   {
+    id: "aerial-opening",
+    image: "/gallery/aerial-showroom-grand-opening.jpg",
+    alt: "Aerial Drone Sunset View of Hansagiri Auto Traders Showroom Grand Opening",
+    category: "opening",
+  },
+  {
+    id: "entrance-arch",
+    image: "/gallery/grand-opening-entrance-arch.jpg",
+    alt: "Hansagiri Auto Traders Grand Opening Entrance Arch & Welcome",
+    category: "opening",
+  },
+  {
     id: "ribbon-cutting",
     image: "/gallery/official-ribbon-cutting.jpg",
     alt: "Hansagiri Auto Traders Official Ribbon Cutting Ceremony",
     category: "opening",
+  },
+  {
+    id: "customer-consultation-ceremony",
+    image: "/gallery/customer-ceremony-consultation.jpg",
+    alt: "Customer Vehicle Walkaround & Inspection at Grand Opening",
+    category: "showroom",
+  },
+  {
+    id: "guests-selfie",
+    image: "/gallery/guests-dinner-selfie.jpg",
+    alt: "Guests and Team Celebration at Grand Opening Reception",
+    category: "showroom",
+  },
+  {
+    id: "staff-selfie",
+    image: "/gallery/staff-selfie-celebration.jpg",
+    alt: "Hansagiri Staff Celebration at Grand Opening",
+    category: "showroom",
+  },
+  {
+    id: "ceremony-attendees",
+    image: "/gallery/grand-opening-ceremony-attendees.jpg",
+    alt: "Formal Grand Opening Ceremony Dignitaries & Audience",
+    category: "opening",
+  },
+  {
+    id: "suzuki-every-handover",
+    image: "/gallery/suzuki-every-family-handover.jpg",
+    alt: "Family Delivery Celebration with Suzuki Every and Grand Key",
+    category: "handover",
+  },
+  {
+    id: "honda-vezel-handover",
+    image: "/gallery/honda-vezel-rs-handover.jpg",
+    alt: "Honda Vezel RS Customer Delivery Key Handover Celebration",
+    category: "handover",
+  },
+  {
+    id: "hansagiri-group-toyota",
+    image: "/gallery/hansagiri-group-toyota-handover.jpg",
+    alt: "Hansagiri Group Customer Delivery Key Handover Plate K26-0743",
+    category: "handover",
+  },
+  {
+    id: "nissan-clipper",
+    image: "/gallery/nissan-clipper-handover.jpg",
+    alt: "Nissan Clipper Vehicle Delivery Key Handover",
+    category: "handover",
+  },
+  {
+    id: "family-key-handover",
+    image: "/gallery/family-grand-key-handover.jpg",
+    alt: "Family Grand Key Handover Celebration",
+    category: "handover",
+  },
+  {
+    id: "lady-customer-handover",
+    image: "/gallery/lady-customer-key-handover.jpg",
+    alt: "Customer Key Handover Celebration Demo Plate K26-0744",
+    category: "handover",
+  },
+  {
+    id: "customer-handshake",
+    image: "/gallery/customer-handshake-delivery.jpg",
+    alt: "Vehicle Delivery Handshake Celebration Demo Plate K26-0746",
+    category: "handover",
+  },
+  {
+    id: "customer-handover-1",
+    image: "/gallery/customer-key-handover-1.jpg",
+    alt: "Hansagiri Auto Traders Customer Delivery Key Handover",
+    category: "handover",
+  },
+  {
+    id: "drummer-procession",
+    image: "/gallery/grand-cultural-drummer-procession.jpg",
+    alt: "Traditional Cultural Drummer Procession on Red Carpet",
+    category: "opening",
+  },
+  {
+    id: "directors-showroom",
+    image: "/gallery/directors-defender-gtr.jpg",
+    alt: "Showroom Showcase with Land Rover Defender and Nissan GT-R",
+    category: "showroom",
+  },
+  {
+    id: "vip-garland",
+    image: "/gallery/vip-garland-procession.jpg",
+    alt: "VIP Guests Garland Welcome with Cultural Marching Band",
+    category: "opening",
+  },
+  {
+    id: "staff-lineup",
+    image: "/gallery/staff-red-carpet-lineup.jpg",
+    alt: "Hansagiri Auto Traders Full Staff Lineup on Red Carpet",
+    category: "showroom",
+  },
+  {
+    id: "twin-gtr",
+    image: "/gallery/twin-nissan-gtr-showcase.jpg",
+    alt: "Twin Nissan GT-R Supercars Showcase in Showroom",
+    category: "showroom",
+  },
+  {
+    id: "mini-ribbon",
+    image: "/gallery/mini-jcw-ceremonial-ribbon.jpg",
+    alt: "MINI Countryman JCW with Grand Opening Ceremonial Ribbon",
+    category: "handover",
   },
   {
     id: "grand-key",
@@ -26,10 +146,10 @@ const photos: GalleryPhoto[] = [
     category: "handover",
   },
   {
-    id: "customer-handover-1",
-    image: "/gallery/customer-key-handover-1.jpg",
-    alt: "Hansagiri Auto Traders Customer Delivery Key Handover",
-    category: "handover",
+    id: "opening-night-gala",
+    image: "/hansagiri-showroom-night.png",
+    alt: "Hansagiri Auto Traders Night Grand Opening Gala with Nissan GT-R",
+    category: "opening",
   },
   {
     id: "opening-keynote",
@@ -47,12 +167,6 @@ const photos: GalleryPhoto[] = [
     id: "host-address",
     image: "/gallery/opening-host-address.jpg",
     alt: "Opening Ceremony Official Address at the Podium",
-    category: "opening",
-  },
-  {
-    id: "opening-night-gala",
-    image: "/hansagiri-showroom-night.png",
-    alt: "Hansagiri Auto Traders Night Grand Opening Gala with Nissan GT-R",
     category: "opening",
   },
   {
@@ -99,9 +213,9 @@ export default function GalleryPage() {
 
   const filters = [
     { id: "all", label: "All Photos" },
-    { id: "handover", label: "Key Handovers" },
     { id: "opening", label: "Grand Opening & Ceremony" },
-    { id: "showroom", label: "Showroom & Team" },
+    { id: "handover", label: "Key Handovers & Deliveries" },
+    { id: "showroom", label: "Showroom & Fleet" },
   ];
 
   const filteredPhotos =
@@ -142,15 +256,15 @@ export default function GalleryPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
             <span className="w-2 h-2 rounded-full bg-lime-500" />
             <span className="text-xs font-mono uppercase tracking-widest text-slate-700 font-bold">
-              Hansagiri Photo Showcase
+              Hansagiri Momentum & Memories
             </span>
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-3 tracking-tight">
-            Gallery
+            Our Moments
           </h1>
           <p className="text-sm text-slate-500 font-mono">
-            Moments, deliveries, grand opening ceremonies, and showroom celebrations at Hansagiri Auto Traders Beruwala.
+            Milestones, vehicle handovers, grand opening celebrations, and showroom momentum at Hansagiri Auto Traders Beruwala.
           </p>
         </div>
       </section>
