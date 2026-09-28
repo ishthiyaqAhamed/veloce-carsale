@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Footer from "../components/Footer";
-import { Phone, Mail, MapPin, Clock, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle2, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,25 +20,85 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 pt-20">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 pt-18 sm:pt-20">
       
       {/* Header */}
-      <div className="bg-white py-16 px-6 border-b border-slate-200">
+      <div className="bg-white py-8 sm:py-16 px-4 sm:px-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-2">
+          <span className="text-[10px] sm:text-xs font-mono uppercase text-slate-500 font-bold block mb-1">
+            Hansagiri Auto Traders · Showroom Desk
+          </span>
+          <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase text-slate-900 mb-2 leading-tight">
             Contact Our Team
           </h1>
-          <p className="text-base text-slate-600 max-w-lg leading-relaxed font-normal">
+          <p className="text-xs sm:text-base text-slate-600 max-w-lg leading-relaxed font-normal">
             Have questions about a car, test drive booking, financing options, or vehicle trade-in? Reach out to us today.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      {/* Quick Mobile Contact Action Cards */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <a
+            href="tel:0777778298"
+            className="p-4 rounded-2xl bg-white border border-slate-200 flex items-center justify-between shadow-2xs hover:border-slate-400 transition-all"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 text-lime-400 flex items-center justify-center">
+                <Phone size={18} />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">Hotline</span>
+                <span className="font-display font-black text-sm text-slate-900">077 777 8298</span>
+              </div>
+            </div>
+            <span className="text-xs font-mono font-bold text-lime-700 bg-lime-50 px-2.5 py-1 rounded-lg">Call</span>
+          </a>
+
+          <a
+            href="https://wa.me/94777778298?text=Hello%20Hansagiri%20Auto%20Traders"
+            target="_blank"
+            rel="noreferrer"
+            className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between shadow-2xs hover:bg-emerald-100 transition-all"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center">
+                <MessageCircle size={18} />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase text-emerald-700 font-bold block">WhatsApp</span>
+                <span className="font-display font-black text-sm text-emerald-950">Fast Response</span>
+              </div>
+            </div>
+            <span className="text-xs font-mono font-bold text-white bg-emerald-500 px-2.5 py-1 rounded-lg">Chat</span>
+          </a>
+
+          <a
+            href="https://www.google.com/search?q=hansagiri+auto+traders+beruwala"
+            target="_blank"
+            rel="noreferrer"
+            className="p-4 rounded-2xl bg-white border border-slate-200 flex items-center justify-between shadow-2xs hover:border-slate-400 transition-all"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center">
+                <MapPin size={18} />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">Showroom</span>
+                <span className="font-display font-black text-sm text-slate-900">586 Galle Rd</span>
+              </div>
+            </div>
+            <span className="text-xs font-mono font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-lg">Maps</span>
+          </a>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
           
           {/* Form (7 cols) */}
-          <div className="lg:col-span-7 p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm">
+          <div className="lg:col-span-7 p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm">
             {submitted ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 bg-lime-100 text-lime-600 border border-lime-300 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -58,8 +118,8 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <h2 className="font-display font-black text-2xl uppercase text-slate-900 mb-4">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <h2 className="font-display font-black text-xl sm:text-2xl uppercase text-slate-900 mb-2 sm:mb-4">
                   Send a Direct Inquiry
                 </h2>
 
@@ -103,7 +163,7 @@ export default function ContactPage() {
                       required
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      placeholder="(555) 000-0000"
+                      placeholder="077 000 0000"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:border-lime-500 transition-all"
                     />
                   </div>
@@ -141,7 +201,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3.5 bg-lime-500 hover:bg-lime-600 text-slate-950 font-display font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-lime-500 hover:bg-lime-600 text-slate-950 font-display font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer active:scale-98"
                 >
                   Send Message
                 </button>
@@ -151,8 +211,8 @@ export default function ContactPage() {
 
           {/* Info (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
-              <h3 className="font-display font-black text-xl uppercase text-slate-900 mb-6">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+              <h3 className="font-display font-black text-xl uppercase text-slate-900 mb-4 sm:mb-6">
                 Showroom Location
               </h3>
               <div className="space-y-4 text-sm text-slate-600">
@@ -178,19 +238,19 @@ export default function ContactPage() {
                   href="https://www.google.com/search?q=hansagiri+auto+traders+beruwala"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all inline-block"
+                  className="w-full text-center sm:w-auto px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all inline-block"
                 >
                   Get Google Maps Directions →
                 </a>
               </div>
             </div>
 
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
               <div className="flex items-center gap-2 text-slate-900 font-display font-bold uppercase text-base mb-4">
                 <Clock size={18} className="text-lime-600" />
                 <span>Showroom Hours</span>
               </div>
-              <ul className="space-y-2 text-sm text-slate-600 font-mono">
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-600 font-mono">
                 <li className="flex justify-between border-b border-slate-100 pb-1.5">
                   <span>Monday - Saturday:</span>
                   <span className="text-slate-900 font-bold">8:00 AM - 8:00 PM</span>
@@ -201,7 +261,7 @@ export default function ContactPage() {
                 </li>
                 <li className="flex justify-between">
                   <span>Current Status:</span>
-                  <span className="text-lime-600 font-bold">Open · Closes 8 PM</span>
+                  <span className="text-lime-600 font-bold">Open Daily</span>
                 </li>
               </ul>
             </div>

@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import MobileBottomNav from "./components/MobileBottomNav";
 import { CurrencyProvider } from "./context/CurrencyContext";
 
 const barlowCondensed = Barlow_Condensed({
@@ -22,6 +23,13 @@ export const metadata: Metadata = {
     "Hansagiri Auto Traders is a premier auto dealership in Beruwala specializing in high-quality new and pre-owned vehicles with honest pricing and dependable service. 586 Galle Rd, Beruwala.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#ffffff",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -29,10 +37,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light scroll-smooth">
-      <body className={`${barlowCondensed.variable} ${dmSans.variable} antialiased bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col`}>
+      <body className={`${barlowCondensed.variable} ${dmSans.variable} antialiased bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col pb-16 md:pb-0`}>
         <CurrencyProvider>
           <Navbar />
-          {children}
+          <div className="flex-1 flex flex-col">
+            {children}
+          </div>
+          <MobileBottomNav />
         </CurrencyProvider>
       </body>
     </html>

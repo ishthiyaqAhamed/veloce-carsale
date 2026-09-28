@@ -248,25 +248,28 @@ export default function GalleryPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 pt-20">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 pt-18 sm:pt-20">
       
       {/* Page Header */}
-      <section className="bg-white py-12 px-6 border-b border-slate-200">
+      <section className="bg-white py-8 sm:py-12 px-4 sm:px-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-3 tracking-tight">
+          <span className="text-[10px] sm:text-xs font-mono uppercase text-slate-500 font-bold block mb-1">
+            Hansagiri Auto Traders · 586 Galle Rd, Beruwala
+          </span>
+          <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase text-slate-900 mb-2 tracking-tight">
             Our Moments
           </h1>
-          <p className="text-sm text-slate-500 font-mono">
-            Milestones, vehicle handovers, grand opening celebrations, and showroom momentum at Hansagiri Auto Traders Beruwala.
+          <p className="text-xs sm:text-sm text-slate-600 font-mono">
+            Milestones, vehicle handovers, grand opening celebrations, and showroom momentum.
           </p>
         </div>
       </section>
 
       {/* Showcase Grid */}
-      <section className="py-12 px-6 max-w-7xl mx-auto">
+      <section className="py-8 sm:py-12 px-4 sm:px-6 max-w-7xl mx-auto">
         
         {/* Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none">
           {filters.map((f) => (
             <button
               key={f.id}

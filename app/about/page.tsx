@@ -10,23 +10,26 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 pt-20">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 pt-18 sm:pt-20">
       
       {/* Header */}
-      <div className="bg-white py-16 px-6 border-b border-slate-200">
+      <div className="bg-white py-8 sm:py-16 px-4 sm:px-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-8">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8 mb-6 sm:mb-8">
             <div className="max-w-3xl">
-              <h1 className="font-display font-black text-4xl sm:text-6xl uppercase text-slate-900 mb-4">
+              <span className="text-[10px] sm:text-xs font-mono uppercase text-slate-500 font-bold block mb-1.5">
+                Hansagiri Auto Traders · Established in Beruwala
+              </span>
+              <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase text-slate-900 mb-3 leading-tight">
                 Beruwala&apos;s Trusted Auto Dealership
               </h1>
-              <p className="text-lg text-slate-700 max-w-3xl leading-relaxed font-normal">
+              <p className="text-sm sm:text-lg text-slate-700 max-w-3xl leading-relaxed font-normal">
                 &ldquo;Hansagiri Auto Traders is a premier auto dealership specializing in high-quality new and pre-owned vehicles. We are dedicated to providing the best vehicle deals, honest pricing, and highly dependable customer service. Whether you are looking to buy a brand-new car or a budget-friendly used vehicle in excellent condition, our expert team is here to put you in the right ride. We guarantee transparency in every transaction. Visit our showroom today and drive with confidence every time.&rdquo;
               </p>
             </div>
 
             <div className="shrink-0">
-              <div className="relative h-20 w-48 sm:h-28 sm:w-60 flex items-center justify-center">
+              <div className="relative h-16 w-40 sm:h-28 sm:w-60 flex items-center justify-center">
                 <Image
                   src="/hansagiri-logo.png"
                   alt="Hansagiri Auto Traders Official Gold Logo"
@@ -41,16 +44,16 @@ export default function AboutPage() {
           </div>
 
           {/* Quick Business Highlights */}
-          <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-600 pt-6 border-t border-slate-100">
-            <div className="flex items-center gap-2 bg-amber-50 text-amber-900 px-3 py-1.5 rounded-full border border-amber-200 font-bold">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-mono text-slate-600 pt-4 sm:pt-6 border-t border-slate-100">
+            <div className="flex items-center gap-1.5 sm:gap-2 bg-amber-50 text-amber-900 px-3 py-1.5 rounded-full border border-amber-200 font-bold">
               <Star size={14} className="text-amber-500" fill="currentColor" />
               <span>5.0 Rating (2 Google Reviews)</span>
             </div>
-            <div className="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200 font-semibold">
+            <div className="flex items-center gap-1.5 sm:gap-2 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200 font-semibold">
               <MapPin size={14} className="text-lime-600" />
               <span>586 Galle Rd, Beruwala 61010</span>
             </div>
-            <div className="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200 font-semibold">
+            <div className="flex items-center gap-1.5 sm:gap-2 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200 font-semibold">
               <Phone size={14} className="text-lime-600" />
               <span>077 777 8298</span>
             </div>
