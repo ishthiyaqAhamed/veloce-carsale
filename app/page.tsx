@@ -1,8 +1,4 @@
 import HeroSection from "./components/HeroSection";
-import MobileHero from "./components/MobileHero";
-import MobileVehicleScroller from "./components/MobileVehicleScroller";
-import MobileTradeInWidget from "./components/MobileTradeInWidget";
-import MobileMomentsPreview from "./components/MobileMomentsPreview";
 import BrandShowcase from "./components/BrandShowcase";
 import FeaturedVehicles from "./components/FeaturedVehicles";
 import TradeInValuation from "./components/TradeInValuation";
@@ -13,39 +9,22 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
-      
-      {/* Desktop Hero Layout (>= md) */}
-      <div className="hidden md:block">
-        <HeroSection />
-      </div>
+      {/* Hero Section */}
+      <HeroSection />
 
-      {/* Dedicated Mobile App-First Hero Layout (< md) */}
-      <div className="block md:hidden pt-18">
-        <MobileHero />
-        <MobileVehicleScroller title="Hot Showroom Picks" />
-      </div>
-
-      {/* Verified Fleet Grid */}
+      {/* Featured Showroom Fleet */}
       <FeaturedVehicles />
 
-      {/* Desktop Trade-In Section (>= md) */}
-      <div className="hidden md:block">
-        <TradeInValuation />
-      </div>
+      {/* Trade-In & Upgrade Process */}
+      <TradeInValuation />
 
-      {/* Mobile Interactive Trade-In Estimator (< md) */}
-      <div className="block md:hidden">
-        <MobileTradeInWidget />
-        <MobileMomentsPreview />
-      </div>
-
-      {/* Manufacturer Brand Showcase */}
+      {/* Verified Brand Showcase */}
       <BrandShowcase />
 
-      {/* Why Choose Us */}
+      {/* Dealer Advantages */}
       <WhyChooseUs />
 
-      {/* Sourcing Banner */}
+      {/* Custom Sourcing Banner */}
       <CtaBanner />
 
       {/* Footer */}

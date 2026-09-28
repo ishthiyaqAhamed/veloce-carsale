@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Car, Image as ImageIcon, RefreshCw, Phone, MessageCircle, MapPin, X } from "lucide-react";
@@ -24,11 +24,10 @@ export default function MobileBottomNav() {
       isActive: pathname === "/",
     },
     {
-      label: "Fleet",
+      label: "Inventory",
       href: "/inventory",
       icon: Car,
       isActive: pathname === "/inventory",
-      badge: "Stock",
     },
     {
       label: "Trade-In",
@@ -37,7 +36,7 @@ export default function MobileBottomNav() {
       isActive: false,
     },
     {
-      label: "Moments",
+      label: "Gallery",
       href: "/gallery",
       icon: ImageIcon,
       isActive: pathname === "/gallery",
@@ -49,7 +48,7 @@ export default function MobileBottomNav() {
       {/* Fixed Mobile Bottom Navigation Bar */}
       <nav 
         aria-label="Mobile Navigation"
-        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-slate-200 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] px-2 py-2 safe-area-pb"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-slate-200 px-2 py-1.5 safe-area-pb"
       >
         <div className="flex items-center justify-around">
           {navItems.map((item) => {
@@ -58,32 +57,19 @@ export default function MobileBottomNav() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex flex-col items-center justify-center py-1 px-3 rounded-2xl transition-all relative ${
+                className={`flex flex-col items-center justify-center py-1.5 px-3 rounded-xl transition-all ${
                   item.isActive
                     ? "text-slate-950 font-bold"
                     : "text-slate-500 hover:text-slate-900"
                 }`}
               >
-                {/* Active Indicator Top Dot */}
-                {item.isActive && (
-                  <span className="absolute -top-1 w-1.5 h-1.5 rounded-full bg-[#84CC16]" />
-                )}
-
-                <div className="relative">
-                  <Icon
-                    size={20}
-                    className={`transition-transform duration-200 ${
-                      item.isActive ? "scale-110 text-slate-950" : "text-slate-500"
-                    }`}
-                  />
-                  {item.badge && (
-                    <span className="absolute -top-1.5 -right-3 px-1 py-0.2 bg-[#E11D48] text-[9px] font-mono text-white font-bold rounded-full leading-none">
-                      {item.badge}
-                    </span>
-                  )}
-                </div>
-
-                <span className="text-[10px] font-mono mt-1 tracking-tight leading-none">
+                <Icon
+                  size={20}
+                  className={`transition-transform duration-200 ${
+                    item.isActive ? "scale-105 text-slate-950" : "text-slate-500"
+                  }`}
+                />
+                <span className="text-[10px] font-sans mt-1 tracking-tight leading-none">
                   {item.label}
                 </span>
               </Link>
@@ -93,12 +79,12 @@ export default function MobileBottomNav() {
           {/* Quick Contact Action Button */}
           <button
             onClick={() => setContactSheetOpen(true)}
-            className="flex flex-col items-center justify-center py-1 px-3 rounded-2xl text-lime-700 active:scale-95 transition-all cursor-pointer"
+            className="flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-slate-700 active:scale-95 transition-all cursor-pointer"
           >
-            <div className="w-8 h-8 rounded-full bg-lime-500 text-slate-950 flex items-center justify-center shadow-md shadow-lime-500/30">
-              <Phone size={16} />
+            <div className="w-7 h-7 rounded-full bg-slate-900 text-lime-400 flex items-center justify-center">
+              <Phone size={14} />
             </div>
-            <span className="text-[10px] font-mono mt-1 font-bold text-slate-900 tracking-tight leading-none">
+            <span className="text-[10px] font-sans mt-1 font-semibold text-slate-900 tracking-tight leading-none">
               Contact
             </span>
           </button>
@@ -115,8 +101,7 @@ export default function MobileBottomNav() {
             onClick={(e) => e.stopPropagation()}
             className="w-full bg-white rounded-t-3xl p-6 border-t border-slate-200 shadow-2xl animate-in slide-in-from-bottom duration-300 max-h-[85vh] overflow-y-auto"
           >
-            {/* Sheet Handle */}
-            <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto mb-5" />
+            <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto mb-4" />
 
             <div className="flex items-center justify-between mb-4">
               <div>
@@ -124,7 +109,7 @@ export default function MobileBottomNav() {
                   Hansagiri Auto Traders
                 </span>
                 <h3 className="font-display font-black text-xl text-slate-900 uppercase">
-                  Showroom Fast Contact
+                  Contact Showroom
                 </h3>
               </div>
               <button
@@ -136,7 +121,7 @@ export default function MobileBottomNav() {
             </div>
 
             {/* Quick Action Buttons */}
-            <div className="space-y-3 mb-6">
+            <div className="space-y-3 mb-5">
               {/* WhatsApp Direct */}
               <a
                 href="https://wa.me/94777778298?text=Hello%20Hansagiri%20Auto%20Traders,%20I%20am%20interested%20in%20inquiring%20about%20a%20vehicle."
@@ -212,7 +197,7 @@ export default function MobileBottomNav() {
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
-              <span>Status: <strong className="text-lime-600">Open Daily until 8 PM</strong></span>
+              <span>Status: <strong className="text-lime-600">Open Daily · Closes 8 PM</strong></span>
               <span>Currency: <strong>{activeCurrencyConfig.code}</strong></span>
             </div>
           </div>
